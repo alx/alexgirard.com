@@ -1,5 +1,6 @@
 #+title: Alexandre Girard Davila
 #+OPTIONS: toc:nil
+#+OPTIONS: html-postamble:nil
 
 * Profile
 
