@@ -1,4 +1,5 @@
 #+title: Alexandre Girard Davila
+#+OPTIONS: toc:nil
 
 * Profile
 
@@ -7,4 +8,4 @@
 
 * Contact
 
-- Email: alx.girard@tutanota.com
+- Email: [[mailto:alx.girard@tutanota.com][alx.girard@tutanota.com]]
