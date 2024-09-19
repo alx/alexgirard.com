@@ -1,7 +1,10 @@
 #+title: Alexandre Girard Davila
 
+* Profile
+
+- Github: https://github.com/alx
+- LinkedIn: https://www.linkedin.com/in/alexandre-girard-86a72b185/
+
 * Contact
 
 - Email: alx.girard@tutanota.com
-- Github: https://github.com/alx
-- LinkedIn: https://www.linkedin.com/in/alexandre-girard-86a72b185/
