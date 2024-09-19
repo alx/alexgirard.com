@@ -1,0 +1,9 @@
+#+title: Weather Lamai
+
+[[file:./THKT2.png]]
+[[file:./THMP3.png]]
+[[file:./THNN.png]]
+[[file:./THTP3.png]]
+[[file:./THTR.png]]
+
+Source: [[https://data.rainviewer.com/images/][rainviewer.com]]
