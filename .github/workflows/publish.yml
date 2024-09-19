@@ -1,8 +1,6 @@
 name: Publish to GitHub Pages
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
   push:
     branches:
       - main
@@ -15,22 +13,10 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install dependencies
-        run: sudo apt install emacs-nox jq wget imagemagick --yes
-        # run: sudo apt install emacs-nox jq wget make build-essential automake --yes
-
-      # - name: Install ImageMagick 7
-      #   run: |
-      #     git clone https://github.com/ImageMagick/ImageMagick.git /tmp/ImageMagick
-      #     cd /tmp/ImageMagick
-      #     ./configure
-      #     ./configure --with-modules
-      #     make
-      #     make -j 6
-      #     sudo make install
+        run: sudo apt install emacs-nox --yes
 
       - name: Build the site
         run: ./build.sh
-        # run: ./build-imagemagick7.sh
 
       - name: Publish generated content to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4

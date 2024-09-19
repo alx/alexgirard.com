@@ -1,9 +1,7 @@
-#+title: Weather Lamai
+#+title: Alexandre Girard Davila
 
-[[file:./THKT2.png]]
-[[file:./THMP3.png]]
-[[file:./THNN.png]]
-[[file:./THTP3.png]]
-[[file:./THTR.png]]
+* Contact
 
-Source: [[https://data.rainviewer.com/images/][rainviewer.com]]
+- Email: alx.girard@tutanota.com
+- Github: https://github.com/alx
+- LinkedIn: https://www.linkedin.com/in/alexandre-girard-86a72b185/
