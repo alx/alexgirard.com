@@ -1,2 +1,3 @@
+.hugo_build.lock
 .packages/
-public/index.html
+public/
