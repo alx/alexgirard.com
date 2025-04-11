@@ -1,8 +1,8 @@
 * Profile
 
 - Github: https://github.com/alx
-- LinkedIn: https://www.linkedin.com/in/alexandre-girard-86a72b185/
+- LinkedIn: [[https://www.linkedin.com/in/alxgirard/]]
 
 * Contact
 
-- Email: [[mailto:alx.girard@tutanota.com][alx.girard@tutanota.com]]
+- Email: [[mailto:alex@girard-davila.net]]
