@@ -1,4 +1,15 @@
 baseURL: https://alexgirard.com/
 languageCode: en-us
 title: Alexandre Girard Davila
-theme: ["PaperMod"]
+author:
+  name: Alexandre Girard Davila
+  email: alex@girard-davila.net
+
+params:
+  description: "Web Engineer and Open Source Creator"
+  keywords: ["developer", "engineer", "open source", "web development"]
+  
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

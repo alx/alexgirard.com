@@ -1,9 +1,0 @@
-* Profile
-
-- https://girard-davila.net
-- Github https://github.com/alx
-- LinkedIn [[https://www.linkedin.com/in/alxgirard/]]
-
-* Contact
-
-- Email: [[mailto:alex@girard-davila.net]]
