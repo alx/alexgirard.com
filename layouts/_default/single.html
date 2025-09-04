@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="pt-20 pb-16 bg-white min-h-screen">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <article class="prose prose-lg max-w-none">
+            <header class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{{ .Title }}</h1>
+                {{ if .Params.description }}
+                <p class="text-xl text-gray-600">{{ .Params.description }}</p>
+                {{ end }}
+                {{ if .Date }}
+                <div class="text-sm text-gray-500 mt-4">
+                    <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                        {{ .Date.Format "January 2, 2006" }}
+                    </time>
+                </div>
+                {{ end }}
+            </header>
+            
+            <div class="content">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</div>
+{{ end }}
