@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta name="keywords" content="{{ delimit (.Params.tags | default .Site.Params.keywords) ", " }}">
-    <meta name="author" content="{{ .Site.Author.name }}">
+    <meta name="author" content="{{ .Site.Params.author.name }}">
     
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title | default .Site.Title }}">
@@ -32,42 +32,13 @@
                         'sans': ['Inter', 'system-ui', 'sans-serif'],
                         'display': ['Inter', 'system-ui', 'sans-serif']
                     },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'gradient-y': 'gradient-y 15s ease infinite',
-                        'gradient-xy': 'gradient-xy 15s ease infinite',
+                    letterSpacing: {
+                        'tighter': '-0.02em',
+                        'tight': '-0.01em',
                     },
-                    keyframes: {
-                        'gradient-y': {
-                            '0%, 100%': {
-                                'background-size': '400% 400%',
-                                'background-position': 'center top'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'center center'
-                            }
-                        },
-                        'gradient-x': {
-                            '0%, 100%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            }
-                        },
-                        'gradient-xy': {
-                            '0%, 100%': {
-                                'background-size': '400% 400%',
-                                'background-position': 'left center'
-                            },
-                            '50%': {
-                                'background-size': '200% 200%',
-                                'background-position': 'right center'
-                            }
-                        }
+                    lineHeight: {
+                        'relaxed': '1.7',
+                        'loose': '1.8',
                     }
                 }
             }

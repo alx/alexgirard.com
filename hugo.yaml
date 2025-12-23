@@ -1,13 +1,13 @@
 baseURL: https://alexgirard.com/
 languageCode: en-us
 title: Alexandre Girard Davila
-author:
-  name: Alexandre Girard Davila
-  email: alex@girard-davila.net
 
 params:
-  description: "Web Engineer and Open Source Creator"
-  keywords: ["developer", "engineer", "open source", "web development"]
+  description: "Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration"
+  keywords: ["senior software engineer", "full-stack developer", "AI/ML", "computer vision", "open source", "React", "Python", "DeepDetect"]
+  author:
+    name: Alexandre Girard Davila
+    email: alex@girard-davila.net
   
 markup:
   goldmark:
