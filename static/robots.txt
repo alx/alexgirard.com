@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# LLM context: https://alexgirard.com/llms.txt
+Sitemap: https://alexgirard.com/sitemap.xml
