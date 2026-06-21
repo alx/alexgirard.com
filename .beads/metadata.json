@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "alexgirard_com",
+  "project_id": "78bdf11f-5073-4ca4-a192-ca85cdfee862"
+}
