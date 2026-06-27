@@ -9,7 +9,7 @@
             </span>
             <span class="block text-gray-400">built to survive production.</span>
         </h1>
-        <a href="https://cal.com/alx-girard" target="_blank" rel="noopener noreferrer"
+        <a href="#book"
            class="inline-block bg-gray-900 text-white px-8 py-4 text-lg font-medium hover:bg-gray-700 transition-colors duration-200">
             Book a working session →
         </a>
@@ -184,11 +184,11 @@
 </section>
 
 <!-- Book a quick call -->
-<section class="py-32 bg-white border-t border-gray-200">
+<section id="book" class="py-32 bg-white border-t border-gray-200">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
         <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 tracking-tight">Book a quick call</h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-12">Pick a 15-minute slot below — no prep needed, just show up with your question.</p>
-        <div style="width:100%;height:700px;overflow:scroll" id="my-cal-inline-quick-call-15min"></div>
+        <div style="width:100%;" id="my-cal-inline-quick-call-15min"></div>
         <script type="text/javascript">
           (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
           Cal("init", "quick-call-15min", {origin:"https://app.cal.com"});
@@ -201,6 +201,13 @@
           });
           Cal.ns["quick-call-15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
         </script>
+        <div class="mt-16 pt-8 border-t border-gray-200">
+            <p class="text-base text-gray-500 mb-4">Need more time? Book a longer session directly on cal.com.</p>
+            <a href="https://cal.com/alx-girard" target="_blank" rel="noopener noreferrer"
+               class="inline-block bg-gray-900 text-white px-8 py-4 text-lg font-medium hover:bg-gray-700 transition-colors duration-200">
+                Book a working session →
+            </a>
+        </div>
     </div>
 </section>
 
