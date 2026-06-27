@@ -3,18 +3,46 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center bg-white">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center py-32">
-        <h1 class="text-5xl md:text-7xl font-bold mb-8 text-gray-900 tracking-tight leading-tight">
-            I help developers and engineering teams design agentic AI workflows that survive contact with production.
+        <h1 class="text-5xl md:text-7xl font-bold mb-12 text-gray-900 tracking-tight leading-tight">
+            <span class="block overflow-hidden" style="height:1.15em;">
+                <span id="hero-cycle" class="block" style="will-change:transform,opacity;">Agentic AI,</span>
+            </span>
+            <span class="block text-gray-400">built to survive production.</span>
         </h1>
-        <p class="text-2xl md:text-3xl text-gray-600 mb-12 font-light tracking-tight leading-relaxed max-w-3xl mx-auto">
-            20+ years shipping software for Airbus, Cartier, SNCF and Tate Britain — now focused on the gap between an agent that demos well and one that does real work, reliably, at a cost you can defend.
-        </p>
         <a href="https://cal.com/alx-girard" target="_blank" rel="noopener noreferrer"
            class="inline-block bg-gray-900 text-white px-8 py-4 text-lg font-medium hover:bg-gray-700 transition-colors duration-200">
             Book a working session →
         </a>
     </div>
 </section>
+
+<script>
+(function () {
+    var words = ['Agentic AI,', 'LLM workflows,', 'AI agents,', 'Evaluations,', 'RAG pipelines,', 'Multi-agent systems,'];
+    var i = 0;
+    var el = document.getElementById('hero-cycle');
+    if (!el) return;
+
+    function slide() {
+        el.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        el.style.transform = 'translateY(-110%)';
+        el.style.opacity = '0';
+        setTimeout(function () {
+            i = (i + 1) % words.length;
+            el.textContent = words[i];
+            el.style.transition = 'none';
+            el.style.transform = 'translateY(110%)';
+            el.style.opacity = '0';
+            el.offsetHeight; // force reflow
+            el.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+            el.style.transform = 'translateY(0)';
+            el.style.opacity = '1';
+        }, 400);
+    }
+
+    setInterval(slide, 2500);
+}());
+</script>
 
 <!-- Who I work with -->
 <section class="py-32 bg-gray-50 border-t border-gray-200">
