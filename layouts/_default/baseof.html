@@ -1,73 +1,47 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}" class="scroll-smooth">
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta name="keywords" content="{{ delimit (.Params.tags | default .Site.Params.keywords) ", " }}">
     <meta name="author" content="{{ .Site.Params.author.name }}">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title | default .Site.Title }}">
     <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
     <meta name="twitter:description" content="{{ .Params.description | default .Site.Params.description }}">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                        'display': ['Inter', 'system-ui', 'sans-serif']
-                    },
-                    letterSpacing: {
-                        'tighter': '-0.02em',
-                        'tight': '-0.01em',
-                    },
-                    lineHeight: {
-                        'relaxed': '1.7',
-                        'loose': '1.8',
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Google Fonts -->
+
+    <!-- Google Fonts: Archivo + Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- LLMs.txt -->
     <link rel="llms" type="text/plain" href="/llms.txt">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
-<body class="antialiased">
+<body>
     {{ partial "header.html" . }}
-    
+
     <main>
         {{ block "main" . }}{{ end }}
     </main>
-    
+
     {{ partial "footer.html" . }}
-    
+
     <!-- Custom JS -->
     <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
