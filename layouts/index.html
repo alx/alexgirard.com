@@ -1,259 +1,181 @@
 {{ define "main" }}
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center bg-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center py-32">
-        <h1 class="text-7xl md:text-9xl font-bold mb-6 text-gray-900 tracking-tight leading-none">
-            Alexandre Girard Davila
-        </h1>
-        <p class="text-3xl md:text-4xl text-gray-600 mb-12 font-light tracking-tight">
-            Senior Software Engineer
-        </p>
-        <a href="#about" class="inline-block text-gray-600 hover:text-gray-900 transition-colors duration-200">
-            <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </a>
+<!-- HERO — comfort variant -->
+<section class="hero">
+  <div class="hero__content">
+    <p class="hero__kicker">Senior Software Engineer · Agentic-AI mentor</p>
+    <h1 class="hero__title">Alexandre<br>Girard Davila</h1>
+    <p class="hero__lead">Pour a coffee, bring one question. You'll be talking to a human who has actually shipped agentic AI to production — not a chatbot, not a sales funnel.</p>
+    <div class="hero__actions">
+      <a href="#hotline" class="btn-primary">
+        <span class="pulse-dot"></span>Ring the hotline — 15 min
+      </a>
+      <a href="#mentorship" class="btn-secondary">How mentorship works</a>
     </div>
+  </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="py-32 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8">
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-12 tracking-tight">About</h2>
-        <div class="prose prose-lg text-gray-600 leading-relaxed space-y-6 mb-12">
-            <p class="text-2xl">
-                Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration. Architected and deployed enterprise-scale platforms for computer vision, edge computing, and real-time data processing serving Fortune 500 clients.
-            </p>
-            <p class="text-2xl">
-                Award-winning developer (IK Prize 2016, Tate • Microsoft • Fabrica • Jolibrain) combining artistic vision with technical excellence in AI-powered installations. Active open-source contributor with widely-adopted tools for network visualization, computer vision, and hardware integration.
-            </p>
-        </div>
-        <div class="mb-12">
-            <h3 class="text-xl font-semibold text-gray-900 mb-4 tracking-tight">Expertise</h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                Full-Stack Development · AI/ML Integration · Computer Vision · Open Source · System Architecture · Edge Computing · Real-time Data Processing
-            </p>
-        </div>
-        <div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-4 tracking-tight">Technologies</h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                React · TypeScript · JavaScript · Python · Ruby · Java · Node.js · Django · Rails · Docker · MongoDB · PostgreSQL · Redis · DeepDetect · OpenCV
-            </p>
-        </div>
-    </div>
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container--narrow">
+    <h2 class="about__title">About</h2>
+    <p class="about__para">Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration. Architected and deployed enterprise-scale platforms for computer vision, edge computing, and real-time data processing serving Fortune 500 clients.</p>
+    <p class="about__para">Award-winning developer (IK Prize 2016 — Tate · Microsoft · Fabrica · Jolibrain) combining artistic vision with technical excellence in AI-powered installations. Active open-source contributor with widely-adopted tools for network visualization, computer vision, and hardware integration.</p>
+    <p class="about__meta-label">Expertise</p>
+    <p class="about__meta-text">Full-Stack Development · AI/ML Integration · Computer Vision · Open Source · System Architecture · Edge Computing · Real-time Data Processing</p>
+    <p class="about__meta-label">Technologies</p>
+    <p class="about__meta-text">React · TypeScript · JavaScript · Python · Ruby · Java · Node.js · Django · Rails · Docker · MongoDB · PostgreSQL · Redis · DeepDetect · OpenCV</p>
+  </div>
 </section>
 
-<!-- Experience Section -->
-<section id="experience" class="py-32 bg-white border-t border-gray-200">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8">
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-16 tracking-tight">Experience</h2>
-        <div class="space-y-12">
-            <!-- Experience Item 1 -->
-            <div class="border-l-2 border-gray-300 pl-6">
-                <div class="mb-2">
-                    <h3 class="text-3xl font-semibold text-gray-900">Senior Software Engineer</h3>
-                    <p class="text-xl text-gray-600 mb-1">Independent Consultant</p>
-                    <p class="text-base text-gray-500">July 2024 - Present</p>
-                </div>
-                <ul class="mt-4 space-y-2 text-lg text-gray-600 leading-relaxed">
-                    <li>• Architected and deployed <a href="https://colette.chat" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">Colette</a>, a production-ready self-hosted RAG and LLM serving platform</li>
-                    <li>• Streamlined deployment through containerization and UI optimization</li>
-                    <li>• Leading development of enterprise-grade open-source AI infrastructure</li>
-                </ul>
-            </div>
+<!-- MENTORSHIP SECTIONS -->
+{{ partial "mentorship/intro.html" . }}
+{{ partial "mentorship/who.html" . }}
+{{ partial "mentorship/what.html" . }}
+{{ partial "mentorship/why.html" . }}
+{{ partial "mentorship/formats.html" . }}
+{{ partial "mentorship/how.html" . }}
 
-            <!-- Experience Item 2 -->
-            <div class="border-l-2 border-gray-300 pl-6">
-                <div class="mb-2">
-                    <h3 class="text-3xl font-semibold text-gray-900">Senior Software Engineer</h3>
-                    <p class="text-xl text-gray-600 mb-1">Jolibrain</p>
-                    <p class="text-base text-gray-500">May 2018 - June 2024</p>
-                </div>
-                <ul class="mt-4 space-y-2 text-lg text-gray-600 leading-relaxed">
-                    <li>• Architected React-based platform UI for DeepDetect framework</li>
-                    <li>• Delivered edge computing solution for Vinci, monitoring 50+ construction sites with 99.9% uptime</li>
-                    <li>• <a href="https://joligen.com" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">JoliGen</a> AI integration for <a href="https://rapaport.com/magazine-article/cartiers-looking-glass-is-luxurys-latest-frontier/" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">Cartier luxury retail</a></li>
-                    <li>• Built video metadata extraction system for railway footage and predictive maintenance</li>
-                </ul>
-            </div>
+<!-- HOTLINE FORM -->
+{{ partial "hotline.html" . }}
 
-            <!-- Experience Item 3 -->
-            <div class="border-l-2 border-gray-300 pl-6">
-                <div class="mb-2">
-                    <h3 class="text-3xl font-semibold text-gray-900">Web Developer</h3>
-                    <p class="text-xl text-gray-600 mb-1">Freelance</p>
-                    <p class="text-base text-gray-500">January 2011 - April 2018</p>
-                </div>
-                <ul class="mt-4 space-y-2 text-lg text-gray-600 leading-relaxed">
-                    <li>• Won IK Prize 2016 at Tate Britain for '<a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">Recognition</a>' - comparing photojournalism with British art from Tate collection in collaboration with Fabrica and Microsoft</li>
-                    <li>• Engineered Raspberry Pi fleet management system for Europa Group serving international conventions</li>
-                    <li>• Published open-source <a href="https://github.com/alx/raspi-kiosk-server" target="_blank" rel="noopener noreferrer" class="text-gray-900 hover:text-blue-600 transition-colors duration-200">raspi-kiosk-server</a> adopted by developers for digital signage solutions</li>
-                </ul>
-            </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="container--narrow">
+    <h2 class="experience__title">Experience</h2>
+    <div class="experience-list">
 
-            <!-- Experience Item 4 -->
-            <div class="border-l-2 border-gray-300 pl-6">
-                <div class="mb-2">
-                    <h3 class="text-3xl font-semibold text-gray-900">Senior Ruby Developer</h3>
-                    <p class="text-xl text-gray-600 mb-1">Legodata</p>
-                    <p class="text-base text-gray-500">January 2009 - January 2011</p>
-                </div>
-                <ul class="mt-4 space-y-2 text-lg text-gray-600 leading-relaxed">
-                    <li>• Developed platform managing cultural events with Letsmotiv magazine</li>
-                    <li>• Designed scalable architecture for event data management and publication</li>
-                </ul>
-            </div>
-        </div>
-        <div class="mt-12 pt-8 border-t border-gray-200">
-            <a href="/Alex_Girard_resume.pdf" class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                Download Resume (PDF) →
-            </a>
-        </div>
+      <div class="experience-item">
+        <h3 class="experience-item__role">Senior Software Engineer</h3>
+        <p class="experience-item__org">Independent Consultant</p>
+        <p class="experience-item__when">July 2024 – Present</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Architected and deployed <a href="https://colette.chat" target="_blank" rel="noopener noreferrer">Colette</a>, a production-ready self-hosted RAG and LLM serving platform.</li>
+          <li class="experience-item__bullet">Streamlined deployment through containerization and UI optimization.</li>
+          <li class="experience-item__bullet">Leading development of enterprise-grade open-source AI infrastructure.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Senior Software Engineer</h3>
+        <p class="experience-item__org">Jolibrain</p>
+        <p class="experience-item__when">May 2018 – June 2024</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Architected React-based platform UI for the DeepDetect framework.</li>
+          <li class="experience-item__bullet">Delivered edge-computing solution for Vinci, monitoring 50+ construction sites with 99.9% uptime.</li>
+          <li class="experience-item__bullet"><a href="https://joligen.com" target="_blank" rel="noopener noreferrer">JoliGen</a> AI integration for <a href="https://rapaport.com/magazine-article/cartiers-looking-glass-is-luxurys-latest-frontier/" target="_blank" rel="noopener noreferrer">Cartier luxury retail</a>.</li>
+          <li class="experience-item__bullet">Built video metadata extraction system for railway footage and predictive maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Web Developer</h3>
+        <p class="experience-item__org">Freelance</p>
+        <p class="experience-item__when">January 2011 – April 2018</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Won IK Prize 2016 at Tate Britain for '<a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer">Recognition</a>' — comparing photojournalism with British art, with Fabrica and Microsoft.</li>
+          <li class="experience-item__bullet">Engineered Raspberry Pi fleet management for Europa Group serving international conventions.</li>
+          <li class="experience-item__bullet">Published open-source <a href="https://github.com/alx/raspi-kiosk-server" target="_blank" rel="noopener noreferrer">raspi-kiosk-server</a>, adopted for digital signage.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Senior Ruby Developer</h3>
+        <p class="experience-item__org">Legodata</p>
+        <p class="experience-item__when">January 2009 – January 2011</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Developed platform managing cultural events with Letsmotiv magazine.</li>
+          <li class="experience-item__bullet">Designed scalable architecture for event data management and publication.</li>
+        </ul>
+      </div>
+
     </div>
+    <a href="/Alex_Girard_resume.pdf" class="experience__resume">Download Resume (PDF) →</a>
+  </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-32 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8">
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-16 tracking-tight">Projects</h2>
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="projects__title">Projects</h2>
+    <div class="projects-grid">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Colette -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">Colette</h3>
-                    <p class="text-base text-gray-500 mb-3">⭐ New</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        Production-ready self-hosted RAG and LLM serving platform for enterprise AI infrastructure.
-                    </p>
-                    <p class="text-base text-gray-500">Python · AI/ML · RAG · LLM</p>
-                </div>
-                <a href="https://colette.chat" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    Visit Colette →
-                </a>
-            </div>
-
-            <!-- Recognition -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">Recognition</h3>
-                    <p class="text-base text-gray-500 mb-3">🏆 IK Prize 2016</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        IK Prize 2016 winner at Tate Britain - AI-powered installation comparing photojournalism with British art collection. Created in collaboration with Tate, Microsoft, and Fabrica.
-                    </p>
-                    <p class="text-base text-gray-500">Computer Vision · Museum Installation · AI</p>
-                </div>
-                <a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    View on GitHub →
-                </a>
-            </div>
-
-            <!-- JoliGen -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">JoliGen</h3>
-                    <p class="text-base text-gray-500 mb-3">⭐ Featured</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        AI-powered generative art platform used by Cartier for luxury retail experiences. Featured in luxury retail innovation.
-                    </p>
-                    <p class="text-base text-gray-500">AI · Generative Art · Enterprise</p>
-                </div>
-                <a href="https://joligen.com" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    Visit JoliGen →
-                </a>
-            </div>
-
-            <!-- parasol -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">Parasol</h3>
-                    <p class="text-base text-gray-500 mb-3">⭐ 64 stars</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        A network graph exploration tool for visualizing and analyzing complex data relationships and connections.
-                    </p>
-                    <p class="text-base text-gray-500">JavaScript · Data Visualization · Network Analysis</p>
-                </div>
-                <a href="https://github.com/alx/parasol" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    View on GitHub →
-                </a>
-            </div>
-            
-            <!-- react-bounding-box -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">React Bounding Box</h3>
-                    <p class="text-base text-gray-500 mb-3">⭐ 50 stars</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        HTML Canvas library to display bounding boxes on images with React integration for computer vision applications.
-                    </p>
-                    <p class="text-base text-gray-500">JavaScript · React · Canvas</p>
-                </div>
-                <a href="https://github.com/alx/react-bounding-box" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    View on GitHub →
-                </a>
-            </div>
-            
-            <!-- deepdetect-js -->
-            <div class="bg-white border border-gray-200 rounded-lg p-8 hover:border-gray-300 transition-colors duration-200">
-                <div class="mb-4">
-                    <h3 class="text-3xl font-semibold text-gray-900 mb-2">DeepDetect JS</h3>
-                    <p class="text-base text-gray-500 mb-3">⭐ 8 stars</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4">
-                        JavaScript client library for DeepDetect deep learning server, enabling easy AI model integration.
-                    </p>
-                    <p class="text-base text-gray-500">JavaScript · Deep Learning · API Client</p>
-                </div>
-                <a href="https://github.com/jolibrain/deepdetect-js" target="_blank" rel="noopener noreferrer"
-                   class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    View on GitHub →
-                </a>
-            </div>
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Colette</h3>
+          <span class="project-card__badge">⭐ New</span>
         </div>
-        
-        <!-- View All Projects Link -->
-        <div class="mt-16 pt-8 border-t border-gray-200">
-            <a href="https://github.com/alx?tab=repositories" target="_blank" rel="noopener noreferrer"
-               class="inline-block text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                View all projects on GitHub →
-            </a>
+        <p class="project-card__desc">Production-ready self-hosted RAG and LLM serving platform for enterprise AI infrastructure.</p>
+        <p class="project-card__tags">Python · AI/ML · RAG · LLM</p>
+        <a href="https://colette.chat" target="_blank" rel="noopener noreferrer" class="project-card__link">Visit Colette →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Recognition</h3>
+          <span class="project-card__badge">🏆 IK Prize</span>
         </div>
+        <p class="project-card__desc">IK Prize 2016 winner at Tate Britain — AI-powered installation comparing photojournalism with British art. With Tate, Microsoft, Fabrica.</p>
+        <p class="project-card__tags">Computer Vision · Installation · AI</p>
+        <a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">JoliGen</h3>
+          <span class="project-card__badge">⭐ Featured</span>
+        </div>
+        <p class="project-card__desc">AI-powered generative art platform used by Cartier for luxury retail experiences.</p>
+        <p class="project-card__tags">AI · Generative Art · Enterprise</p>
+        <a href="https://joligen.com" target="_blank" rel="noopener noreferrer" class="project-card__link">Visit JoliGen →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Parasol</h3>
+          <span class="project-card__badge">⭐ 64</span>
+        </div>
+        <p class="project-card__desc">A network graph exploration tool for visualizing and analyzing complex data relationships.</p>
+        <p class="project-card__tags">JavaScript · Data Viz · Networks</p>
+        <a href="https://github.com/alx/parasol" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">React Bounding Box</h3>
+          <span class="project-card__badge">⭐ 50</span>
+        </div>
+        <p class="project-card__desc">HTML Canvas library to display bounding boxes on images with React, for computer vision.</p>
+        <p class="project-card__tags">JavaScript · React · Canvas</p>
+        <a href="https://github.com/alx/react-bounding-box" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">DeepDetect JS</h3>
+          <span class="project-card__badge">⭐ 8</span>
+        </div>
+        <p class="project-card__desc">JavaScript client library for the DeepDetect deep-learning server, for easy AI model integration.</p>
+        <p class="project-card__tags">JavaScript · Deep Learning · API</p>
+        <a href="https://github.com/jolibrain/deepdetect-js" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
     </div>
+    <a href="https://github.com/alx?tab=repositories" target="_blank" rel="noopener noreferrer" class="projects__all-link">View all projects on GitHub →</a>
+  </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-32 bg-white border-t border-gray-200">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-8 tracking-tight">Get in Touch</h2>
-        <p class="text-2xl text-gray-600 mb-16 leading-relaxed">
-            I'm always interested in hearing about new opportunities and interesting projects.
-        </p>
-
-        <div class="space-y-6 text-xl">
-            <div>
-                <p class="text-gray-600 mb-2">Email</p>
-                <a href="mailto:alex@girard-davila.net" class="text-gray-900 font-medium hover:text-blue-600 transition-colors duration-200">
-                    alex@girard-davila.net
-                </a>
-            </div>
-
-            <div class="flex justify-center space-x-8 pt-4">
-                <a href="https://github.com/alx" target="_blank" rel="noopener noreferrer"
-                   class="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/alxgirard/" target="_blank" rel="noopener noreferrer"
-                   class="text-gray-600 hover:text-gray-900 transition-colors duration-200">
-                    LinkedIn
-                </a>
-            </div>
-        </div>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container--narrow" style="max-width:600px;">
+    <h2 class="contact__title">Get in touch</h2>
+    <p class="contact__sub">Prefer the slow lane? Drop me a line — or ring the hotline above for something quicker.</p>
+    <a href="mailto:alex@girard-davila.net" class="contact__email">alex@girard-davila.net</a>
+    <div class="contact__social">
+      <a href="https://github.com/alx" target="_blank" rel="noopener noreferrer" class="contact__social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/alxgirard/" target="_blank" rel="noopener noreferrer" class="contact__social-link">LinkedIn</a>
     </div>
+  </div>
 </section>
 
 {{ end }}
