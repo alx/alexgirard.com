@@ -308,6 +308,15 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   color: var(--muted);
   margin: 0;
 }
+.about__resume {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.about__resume:hover { text-decoration: underline; }
 
 /* ============================================================
    MENTORSHIP INTRO
