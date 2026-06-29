@@ -43,6 +43,17 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
 }
 .agfade { animation: agfade 0.7s ease both; }
 
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(255,255,255,0.65); }
+  70%  { box-shadow: 0 0 0 8px rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0   rgba(255,255,255,0); }
+}
+@keyframes pulse-ring-accent {
+  0%   { box-shadow: 0 0 0 0   rgba(13,148,136,0.65); }
+  70%  { box-shadow: 0 0 0 8px rgba(13,148,136,0); }
+  100% { box-shadow: 0 0 0 0   rgba(13,148,136,0); }
+}
+
 /* ============================================================
    LAYOUT
    ============================================================ */
@@ -72,17 +83,16 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   height: 8px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 0 0 5px rgba(255,255,255,0.3);
   flex-shrink: 0;
+  animation: pulse-ring 1.6s ease-out infinite;
 }
 .pulse-dot--sm {
   width: 7px;
   height: 7px;
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.35);
 }
 .pulse-dot--accent {
   background: var(--accent);
-  box-shadow: 0 0 0 5px rgba(13,148,136,0.25);
+  animation: pulse-ring-accent 1.6s ease-out infinite;
 }
 
 /* CTA buttons */
