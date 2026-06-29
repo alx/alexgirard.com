@@ -1,38 +1,49 @@
 <section id="hotline" class="hotline">
   <div class="hotline__inner">
     <div class="hotline__copy">
-      <p class="hotline__kicker">The hotline · 15 min</p>
+      <p class="hotline__kicker">The hotline</p>
       <h2 class="hotline__title">Let's have that coffee.</h2>
       <p class="hotline__para">Think of it as a morning chat with an engineer who's already shipped this. One question, two lines, a real human voice on the other end.</p>
       <p class="hotline__sub">No bot triage. No discovery call. If I'm not the right person, I'll say so and point you somewhere better.</p>
     </div>
     <div class="hotline-card">
+      <div data-fs-success class="hotline-success">
+        <div class="hotline-success__icon">✓</div>
+        <h3 class="hotline-success__title">Message sent.</h3>
+        <p class="hotline-success__text">I read every one personally — you'll hear back from a human.</p>
+      </div>
       <form id="hotline-form">
+        <div data-fs-error class="form-error"></div>
         <div class="form-field">
           <label class="form-label" for="hotline-name">Your name</label>
-          <input class="form-input" type="text" id="hotline-name" placeholder="Jane Doe" autocomplete="name">
+          <input class="form-input" type="text" id="hotline-name" name="name"
+                 placeholder="Jane Doe" autocomplete="name" data-fs-field />
+          <span data-fs-error="name"></span>
         </div>
         <div class="form-field">
           <label class="form-label" for="hotline-email">Email</label>
-          <input class="form-input" type="email" id="hotline-email" placeholder="jane@company.com" autocomplete="email">
+          <input class="form-input" type="email" id="hotline-email" name="email"
+                 placeholder="jane@company.com" autocomplete="email" data-fs-field />
+          <span data-fs-error="email"></span>
         </div>
         <div class="form-field">
           <label class="form-label" for="hotline-question">Your question, in two lines</label>
-          <textarea class="form-textarea" id="hotline-question" rows="3" placeholder="What's broken, what you've tried, what you need to decide."></textarea>
+          <textarea class="form-textarea" id="hotline-question" name="message"
+                    rows="3" placeholder="What's broken, what you've tried, what you need to decide."
+                    data-fs-field></textarea>
+          <span data-fs-error="message"></span>
         </div>
-        <p class="form-error" id="hotline-error"></p>
-        <button type="submit" class="form-submit">
+        <button type="submit" class="form-submit" data-fs-submit-btn>
           <span class="pulse-dot"></span>Ring the hotline →
         </button>
         <p class="form-hint">Goes straight to a human. No autoresponder, no chatbot.</p>
       </form>
-      <div class="hotline-success" id="hotline-success">
-        <div class="hotline-success__icon">✓</div>
-        <h3 class="hotline-success__title">Your question's ready.</h3>
-        <p class="hotline-success__text">Hit send to ring it through to me directly — I read every one personally.</p>
-        <a href="#" id="hotline-send" class="hotline-success__send">Open mail &amp; send →</a>
-        <button class="hotline-success__reset" id="hotline-reset">Ask something else</button>
-      </div>
     </div>
   </div>
 </section>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#hotline-form', formId: 'xzdlvpww' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
