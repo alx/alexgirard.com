@@ -152,12 +152,16 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   gap: 24px;
 }
 .site-nav__logo {
-  font-weight: 900;
-  font-size: 18px;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--ink);
   flex-shrink: 0;
+}
+.site-nav__logo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: block;
 }
 .site-nav__links {
   display: flex;
