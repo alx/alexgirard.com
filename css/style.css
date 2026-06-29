@@ -2,10 +2,10 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  --accent:        #0d9488;
-  --accent-hover:  #0f766e;
-  --accent-tint:   #f0fdfa;
-  --accent-tint-bd:#cdeee9;
+  --accent:        #e0533d;
+  --accent-hover:  #c44430;
+  --accent-tint:   #fdf2f0;
+  --accent-tint-bd:#f9d0c9;
   --ink:    #1a2230;
   --body:   #4a5562;
   --muted:  #5b6573;
@@ -49,9 +49,9 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   100% { box-shadow: 0 0 0 0   rgba(255,255,255,0); }
 }
 @keyframes pulse-ring-accent {
-  0%   { box-shadow: 0 0 0 0   rgba(13,148,136,0.65); }
-  70%  { box-shadow: 0 0 0 8px rgba(13,148,136,0); }
-  100% { box-shadow: 0 0 0 0   rgba(13,148,136,0); }
+  0%   { box-shadow: 0 0 0 0   rgba(224,83,61,0.65); }
+  70%  { box-shadow: 0 0 0 8px rgba(224,83,61,0); }
+  100% { box-shadow: 0 0 0 0   rgba(224,83,61,0); }
 }
 
 /* ============================================================
