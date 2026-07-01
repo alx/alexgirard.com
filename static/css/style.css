@@ -262,6 +262,13 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   font-size: 21px;
   line-height: 1.55;
   color: var(--body);
+  margin: 0 auto 16px;
+  max-width: 560px;
+}
+.hero__sub {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted, #666);
   margin: 0 auto 40px;
   max-width: 560px;
 }
@@ -361,29 +368,11 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   color: var(--faint);
   margin: 0 0 28px;
 }
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.who-card {
-  background: #fff;
-  border: 1px solid #e8eaed;
-  border-top: 3px solid var(--accent);
-  border-radius: 4px;
-  padding: 30px 26px;
-}
-.who-card__title {
-  font-size: 21px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin: 0 0 14px;
-}
-.who-card__text {
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--muted);
+.who__lead {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--body);
+  max-width: 680px;
   margin: 0;
 }
 

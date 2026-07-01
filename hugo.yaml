@@ -3,8 +3,8 @@ languageCode: en-us
 title: Alexandre Girard Davila
 
 params:
-  description: "Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration"
-  keywords: ["senior software engineer", "full-stack developer", "AI/ML", "computer vision", "open source", "React", "Python", "DeepDetect"]
+  description: "I fix agentic AI that works in the demo and breaks in production. Twenty years shipping ML for Airbus, Cartier, SNCF, and Tate."
+  keywords: ["agentic AI", "AI production reliability", "AI debugging", "LLM agents", "computer vision", "ML engineering", "AI consultant"]
   author:
     name: Alexandre Girard Davila
     email: alex@girard-davila.net
