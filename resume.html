@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexandre Girard Davila — Resume</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #004f90;
+      --gray: #808080;
+      --text: #000;
+      --font: "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, sans-serif;
+      --page-w: 780px;
+    }
+
+    body {
+      font-family: var(--font);
+      font-size: 11pt;
+      color: var(--text);
+      background: #f4f4f4;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: var(--page-w);
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2.5rem 2.5rem 3rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,.12);
+    }
+
+    /* ── Header ── */
+    .cv-header {
+      text-align: center;
+      margin-bottom: 1.4rem;
+    }
+    .cv-header__name {
+      font-size: 28pt;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: -.5px;
+    }
+    .cv-header__connections {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .4rem 1.2rem;
+      margin-top: .5rem;
+      font-size: 10pt;
+      color: var(--blue);
+    }
+    .cv-header__connections a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .cv-header__connections a:hover { text-decoration: underline; }
+
+    /* ── Section titles ── */
+    .section { margin-top: 1.2rem; }
+    .section__title {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: var(--blue);
+      border-bottom: .5pt solid var(--blue);
+      padding-bottom: .15rem;
+      margin-bottom: .6rem;
+    }
+
+    /* ── Summary bullets ── */
+    .summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+    .summary-list li::before { content: "• "; color: var(--blue); }
+
+    /* ── Competencies ── */
+    .competency { margin-bottom: .3rem; }
+    .competency strong { color: var(--text); }
+
+    /* ── Experience entries ── */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr 4.5rem;
+      gap: 0 .6rem;
+      margin-bottom: 1rem;
+    }
+    .entry:last-child { margin-bottom: 0; }
+    .entry__main {}
+    .entry__meta {
+      text-align: right;
+      font-size: 9.5pt;
+      color: var(--gray);
+      white-space: nowrap;
+    }
+    .entry__title {
+      font-weight: 700;
+    }
+    .entry__sub {
+      font-size: 10pt;
+      color: #333;
+    }
+    .entry__summary {
+      font-size: 10pt;
+      color: #444;
+      margin-top: .15rem;
+    }
+    .entry__bullets {
+      margin-top: .3rem;
+      padding-left: .5rem;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+    }
+    .entry__bullets li { font-size: 10pt; }
+    .entry__bullets li::before { content: "• "; color: var(--blue); }
+    .entry__bullets a { color: var(--blue); text-decoration: none; }
+    .entry__bullets a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .cv-footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 9pt;
+      color: var(--gray);
+    }
+    .cv-footer a { color: var(--blue); text-decoration: none; }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; }
+      .page { box-shadow: none; margin: 0; padding: 1.5cm 2cm; }
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 1.2rem; }
+      .entry { grid-template-columns: 1fr; }
+      .entry__meta { text-align: left; margin-bottom: .2rem; order: -1; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <header class="cv-header">
+    <div class="cv-header__name">Alexandre Girard Davila</div>
+    <div class="cv-header__connections">
+      <span>Europe | Asia</span>
+      <a href="mailto:hi@alexgirard.com">hi@alexgirard.com</a>
+      <a href="https://alexgirard.com" target="_blank" rel="noopener">alexgirard.com</a>
+      <a href="https://linkedin.com/in/alxgirard" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/alx" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+
+  <!-- Professional Summary -->
+  <section class="section">
+    <div class="section__title">Professional Summary</div>
+    <ul class="summary-list">
+      <li><strong>Senior Software Engineer</strong> with over two decades of experience in full-stack development, specializing in open-source solutions and AI/ML integration.</li>
+      <li><strong>Technical Leadership</strong>: Architected and deployed enterprise-scale platforms for computer vision, edge computing, and real-time data processing serving Fortune 500 clients.</li>
+      <li><strong>Open Source Impact</strong>: Maintained 358+ public repositories with 607+ stars, including widely-adopted tools for network visualization, computer vision, and hardware integration.</li>
+      <li><strong>Innovation Driver</strong>: Award-winning developer (IK Prize 2016, Tate · Microsoft · Fabrica · Jolibrain) combining artistic vision with technical excellence in AI-powered installations.</li>
+    </ul>
+  </section>
+
+  <!-- Core Competencies -->
+  <section class="section">
+    <div class="section__title">Core Competencies</div>
+    <div class="competency"><strong>Programming &amp; Frameworks:</strong> React, TypeScript, JavaScript, Python, Ruby, Java · Node.js, Django, Rails · RESTful APIs, WebSockets</div>
+    <div class="competency"><strong>Infrastructure &amp; DevOps:</strong> Docker, CI/CD · Edge Computing (Jetson Nano) · MongoDB, PostgreSQL, Redis · System Architecture &amp; Microservices</div>
+    <div class="competency"><strong>AI/ML &amp; Specialized Technologies:</strong> Computer Vision (DeepDetect, OpenCV) · LLM Integration &amp; RAG Systems · Real-time Data Processing · IoT &amp; Hardware Integration (Raspberry Pi, Arduino)</div>
+    <div class="competency"><strong>Languages:</strong> English (Professional), Spanish (Professional), French (Native)</div>
+  </section>
+
+  <!-- Professional Experience -->
+  <section class="section">
+    <div class="section__title">Professional Experience</div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Independent Consultant — Senior Software Engineer</div>
+        <div class="entry__sub">Remote · Thailand</div>
+        <div class="entry__summary">Leading development of enterprise-grade open-source AI infrastructure.</div>
+        <ul class="entry__bullets">
+          <li>Architected and deployed <a href="https://colette.chat" target="_blank" rel="noopener">Colette</a>, a production-ready self-hosted RAG and LLM serving platform.</li>
+          <li>Streamlined deployment through containerization and UI optimization.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>July 2024 – present</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Jolibrain — Senior Software Engineer</div>
+        <div class="entry__sub">Toulouse, France</div>
+        <div class="entry__summary">Led full-stack development for AI-powered computer vision platforms serving enterprise clients.</div>
+        <ul class="entry__bullets">
+          <li>Architected React-based platform UI for the DeepDetect platform framework.</li>
+          <li>Delivered edge computing solution for Vinci, monitoring 50+ construction sites with 99.9% uptime.</li>
+          <li><a href="https://joligen.com" target="_blank" rel="noopener">JoliGen</a> AI integration for <a href="https://rapaport.com/magazine-article/cartiers-looking-glass-is-luxurys-latest-frontier/" target="_blank" rel="noopener">Cartier luxury retail</a>.</li>
+          <li>Built video metadata extraction system of railway footage for predictive maintenance.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>May 2018 – June 2024</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Freelance — Web Developer</div>
+        <div class="entry__sub">Toulouse, France</div>
+        <div class="entry__summary">AI museum installations and hardware integration projects.</div>
+        <ul class="entry__bullets">
+          <li>Won IK Prize 2016 at Tate Britain for '<a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener">Recognition</a>' — comparing photojournalism with British art from the Tate collection, in collaboration with Fabrica and Microsoft.</li>
+          <li>Engineered Raspberry Pi fleet management system for Europa Group serving international conventions.</li>
+          <li>Published open-source <a href="https://github.com/alx/raspi-kiosk-server" target="_blank" rel="noopener">raspi-kiosk-server</a> adopted by developers for digital signage solutions.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>Jan 2011 – Apr 2018</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Legodata — Senior Ruby Developer</div>
+        <div class="entry__sub">Toulouse, France</div>
+        <div class="entry__summary">Built scalable event management platform for the cultural sector.</div>
+        <ul class="entry__bullets">
+          <li>Developed platform managing cultural events with Letsmotiv magazine.</li>
+          <li>Designed scalable architecture for event data management and publication.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>Jan 2009 – Jan 2011</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Independent Consultant — Full-Stack Developer</div>
+        <div class="entry__sub">Europe (Toulouse, Madrid, Berlin)</div>
+        <div class="entry__summary">Delivered enterprise social platforms for major financial institutions.</div>
+        <ul class="entry__bullets">
+          <li>Built feevy.com social aggregation platform processing daily RSS feeds.</li>
+          <li>Deployed WordPress MU-based blogging platform for BBVA serving 5,000+ employees across 30 countries.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>Jan 2007 – Jan 2009</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Atchik Realtime — Java Developer</div>
+        <div class="entry__sub">Toulouse, France</div>
+        <div class="entry__summary">Developed real-time mobile applications for pre-smartphone era.</div>
+        <ul class="entry__bullets">
+          <li>Built WAP-based chat and dating applications.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>Jan 2007 – Jan 2009</div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">CESR (now IRAP) — Java Developer</div>
+        <div class="entry__sub">Toulouse, France</div>
+        <div class="entry__summary">Scientific software development for space research.</div>
+        <ul class="entry__bullets">
+          <li>Developed <a href="http://cassis.irap.omp.eu/?page=presentation" target="_blank" rel="noopener">Cassis</a> spectral analytics tool processing astrophysics research data.</li>
+          <li>Contributed to mission-critical software for the <a href="https://en.wikipedia.org/wiki/Herschel_Space_Observatory" target="_blank" rel="noopener">Herschel Space Observatory</a> ESA mission.</li>
+        </ul>
+      </div>
+      <div class="entry__meta">
+        <div>Jan 2005 – Jan 2007</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <div class="section__title">Education</div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">IUT de Vannes — DUT, Computer Science</div>
+        <div class="entry__sub">Vannes, France · Specialized in Software Engineering</div>
+      </div>
+      <div class="entry__meta">Sept 2000 – June 2002</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry__main">
+        <div class="entry__title">Sheffield Hallam University — Computer Engineering</div>
+        <div class="entry__sub">Sheffield, UK · Erasmus: European exchange program</div>
+      </div>
+      <div class="entry__meta">Sept 2002 – Mar 2003</div>
+    </div>
+  </section>
+
+  <!-- Extracurricular -->
+  <section class="section">
+    <div class="section__title">Extracurricular Activities</div>
+    <ul class="summary-list">
+      <li><strong>Photomaton AI</strong>: AI-powered photobooth system in collaboration with <a href="https://www.minutepapillons.org/" target="_blank" rel="noopener" style="color:var(--blue)">Minutepapillons</a>.</li>
+      <li><strong>Tetalab Hackerspace</strong>: Co-founded <a href="https://tetalab.org" target="_blank" rel="noopener" style="color:var(--blue)">Tetalab</a>, NGO focused on hacker culture and technology education.</li>
+      <li><strong>Open Source Portfolio</strong>: Maintained 358+ repositories including <a href="https://github.com/alx/parasol" target="_blank" rel="noopener" style="color:var(--blue)">parasol</a> (network visualization), <a href="https://github.com/alx/react-bounding-box" target="_blank" rel="noopener" style="color:var(--blue)">react-bounding-box</a> (computer vision), and <a href="https://github.com/alx/muse_vr_levitation" target="_blank" rel="noopener" style="color:var(--blue)">Muse VR Levitation</a> (hardware integration).</li>
+    </ul>
+  </section>
+
+  <footer class="cv-footer">
+    <a href="https://alexgirard.com">alexgirard.com</a> · <a href="/Alex_Girard_resume.pdf">Download PDF</a> · Last updated July 2026
+  </footer>
+
+</div>
+</body>
+</html>
