@@ -1,6 +1,6 @@
 # Alexandre Girard Davila
 
-> Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration. Award-winning developer (IK Prize 2016, Tate · Microsoft · Fabrica · Jolibrain) with expertise in computer vision, edge computing, and enterprise AI infrastructure. Active open-source contributor across network visualization, computer vision, and hardware integration.
+> Senior Software Engineer with over two decades of experience in full-stack development, specializing in open-source solutions and AI/ML integration. Award-winning developer (IK Prize 2016, Tate · Microsoft · Fabrica · Jolibrain) with expertise in computer vision, edge computing, and enterprise AI infrastructure. Active open-source contributor across network visualization, computer vision, and hardware integration.
 
 ## Resume
 
