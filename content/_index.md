@@ -1,6 +1,6 @@
 ---
 title: "Alexandre Girard Davila"
-description: "Senior Software Engineer with 18+ years of experience in full-stack development, specializing in open-source solutions and AI/ML integration"
+description: "Senior Software Engineer with over two decades of experience in full-stack development, specializing in open-source solutions and AI/ML integration"
 date: 2024-09-04
 draft: false
 ---
