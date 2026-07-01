@@ -4,7 +4,8 @@
 
 ## Resume
 
-- [Resume](https://alexgirard.com/Alex_Girard_resume.pdf): Full CV including experience, skills, and contact information
+- [Resume](https://alexgirard.com/resume.html): Full CV including experience, skills, and contact information
+- [Resume PDF](https://alexgirard.com/Alex_Girard_resume.pdf): Downloadable PDF version
 
 ## Projects
 
