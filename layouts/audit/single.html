@@ -41,11 +41,43 @@
   </div>
 </section>
 
-<!-- CTA — Cal.com added in Task 2 -->
+<!-- CTA / CAL.COM -->
 <section class="audit-cal">
   <div class="container--narrow">
     <p class="audit-cal__heading">Book a scoping call.</p>
+    <div style="width:100%;min-height:600px;position:relative" id="my-cal-inline-audit-scoping-call"></div>
   </div>
 </section>
+
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "audit-scoping-call", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+
+  Cal.ns["audit-scoping-call"]("inline", {
+    elementOrSelector:"#my-cal-inline-audit-scoping-call",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":true},
+    calLink: "alx-girard/audit-scoping-call",
+  });
+
+  Cal.ns["audit-scoping-call"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+  (function () {
+    var container = document.getElementById('my-cal-inline-audit-scoping-call');
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;inset:0;z-index:1;cursor:default;';
+    overlay.addEventListener('wheel', function (e) {
+      window.scrollBy({ top: e.deltaY, left: 0, behavior: 'instant' });
+    }, { passive: true });
+    overlay.addEventListener('mousedown', function () {
+      overlay.style.display = 'none';
+    });
+    container.addEventListener('mouseleave', function () {
+      overlay.style.display = '';
+    });
+    container.appendChild(overlay);
+  })();
+</script>
 
 {{ end }}
