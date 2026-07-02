@@ -16,7 +16,7 @@
 <section class="invite-cal">
   <div class="container--narrow">
     <p class="invite-cal__heading">Or, pick a slot.</p>
-    <div style="width:100%;min-height:600px" id="my-cal-inline-quick-call-15min"></div>
+    <div style="width:100%;min-height:600px;position:relative" id="my-cal-inline-quick-call-15min"></div>
   </div>
 </section>
 
@@ -33,6 +33,26 @@
   });
 
   Cal.ns["quick-call-15min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+
+  // Prevent the Cal.com iframe from trapping page scroll.
+  // The overlay intercepts wheel events and forwards them to the page.
+  // On mousedown the overlay steps aside so the user can click the calendar,
+  // and it returns when the mouse leaves the container.
+  (function () {
+    var container = document.getElementById('my-cal-inline-quick-call-15min');
+    var overlay = document.createElement('div');
+    overlay.style.cssText = 'position:absolute;inset:0;z-index:1;cursor:default;';
+    overlay.addEventListener('wheel', function (e) {
+      window.scrollBy({ top: e.deltaY, left: 0, behavior: 'instant' });
+    }, { passive: true });
+    overlay.addEventListener('mousedown', function () {
+      overlay.style.display = 'none';
+    });
+    container.addEventListener('mouseleave', function () {
+      overlay.style.display = '';
+    });
+    container.appendChild(overlay);
+  })();
 </script>
 
 {{ end }}
