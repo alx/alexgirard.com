@@ -1,0 +1,189 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]: Alexandre Girard Davila
+    - generic [ref=e5]:
+      - generic [ref=e6]: Europe | Asia
+      - link "hi@alexgirard.com" [ref=e7] [cursor=pointer]:
+        - /url: mailto:hi@alexgirard.com
+      - link "alexgirard.com" [ref=e8] [cursor=pointer]:
+        - /url: https://alexgirard.com
+      - link "LinkedIn" [ref=e9] [cursor=pointer]:
+        - /url: https://linkedin.com/in/alxgirard
+      - link "GitHub" [ref=e10] [cursor=pointer]:
+        - /url: https://github.com/alx
+  - generic [ref=e11]:
+    - generic [ref=e12]: Professional Summary
+    - list [ref=e13]:
+      - listitem [ref=e14]:
+        - text: •
+        - strong [ref=e15]: Senior Software Engineer
+        - text: with over two decades of experience in full-stack development, specializing in open-source solutions and AI/ML integration.
+      - listitem [ref=e16]:
+        - text: •
+        - strong [ref=e17]: Technical Leadership
+        - text: ": Architected and deployed enterprise-scale platforms for computer vision, edge computing, and real-time data processing serving Fortune 500 clients."
+      - listitem [ref=e18]:
+        - text: •
+        - strong [ref=e19]: Open Source Impact
+        - text: ": Maintained 358+ public repositories with 607+ stars, including widely-adopted tools for network visualization, computer vision, and hardware integration."
+      - listitem [ref=e20]:
+        - text: •
+        - strong [ref=e21]: Innovation Driver
+        - text: ": Award-winning developer (IK Prize 2016, Tate · Microsoft · Fabrica · Jolibrain) combining artistic vision with technical excellence in AI-powered installations."
+  - generic [ref=e22]:
+    - generic [ref=e23]: Core Competencies
+    - generic [ref=e24]:
+      - strong [ref=e25]: "Programming & Frameworks:"
+      - text: React, TypeScript, JavaScript, Python, Ruby, Java · Node.js, Django, Rails · RESTful APIs, WebSockets
+    - generic [ref=e26]:
+      - strong [ref=e27]: "Infrastructure & DevOps:"
+      - text: Docker, CI/CD · Edge Computing (Jetson Nano) · MongoDB, PostgreSQL, Redis · System Architecture & Microservices
+    - generic [ref=e28]:
+      - strong [ref=e29]: "AI/ML & Specialized Technologies:"
+      - text: Computer Vision (DeepDetect, OpenCV) · LLM Integration & RAG Systems · Real-time Data Processing · IoT & Hardware Integration (Raspberry Pi, Arduino)
+    - generic [ref=e30]:
+      - strong [ref=e31]: "Languages:"
+      - text: English (Professional), Spanish (Professional), French (Native)
+  - generic [ref=e32]:
+    - generic [ref=e33]: Professional Experience
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: Independent Consultant — Senior Software Engineer
+        - generic [ref=e37]: Remote · Thailand
+        - generic [ref=e38]: Leading development of enterprise-grade open-source AI infrastructure.
+        - list [ref=e39]:
+          - listitem [ref=e40]:
+            - text: • Architected and deployed
+            - link "Colette" [ref=e41] [cursor=pointer]:
+              - /url: https://colette.chat
+            - text: ", a production-ready self-hosted RAG and LLM serving platform."
+          - listitem [ref=e42]: • Streamlined deployment through containerization and UI optimization.
+      - generic [ref=e44]: July 2024 – present
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: Jolibrain — Senior Software Engineer
+        - generic [ref=e48]: Toulouse, France
+        - generic [ref=e49]: Led full-stack development for AI-powered computer vision platforms serving enterprise clients.
+        - list [ref=e50]:
+          - listitem [ref=e51]: • Architected React-based platform UI for the DeepDetect platform framework.
+          - listitem [ref=e52]: • Delivered edge computing solution for Vinci, monitoring 50+ construction sites with 99.9% uptime.
+          - listitem [ref=e53]:
+            - text: •
+            - link "JoliGen" [ref=e54] [cursor=pointer]:
+              - /url: https://joligen.com
+            - text: AI integration for
+            - link "Cartier luxury retail" [ref=e55] [cursor=pointer]:
+              - /url: https://rapaport.com/magazine-article/cartiers-looking-glass-is-luxurys-latest-frontier/
+            - text: .
+          - listitem [ref=e56]: • Built video metadata extraction system of railway footage for predictive maintenance.
+      - generic [ref=e58]: May 2018 – June 2024
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: Freelance — Web Developer
+        - generic [ref=e62]: Toulouse, France
+        - generic [ref=e63]: AI museum installations and hardware integration projects.
+        - list [ref=e64]:
+          - listitem [ref=e65]:
+            - text: • Won IK Prize 2016 at Tate Britain for '
+            - link "Recognition" [ref=e66] [cursor=pointer]:
+              - /url: https://github.com/jolibrain/recognition
+            - text: "' — comparing photojournalism with British art from the Tate collection, in collaboration with Fabrica and Microsoft."
+          - listitem [ref=e67]: • Engineered Raspberry Pi fleet management system for Europa Group serving international conventions.
+          - listitem [ref=e68]:
+            - text: • Published open-source
+            - link "raspi-kiosk-server" [ref=e69] [cursor=pointer]:
+              - /url: https://github.com/alx/raspi-kiosk-server
+            - text: adopted by developers for digital signage solutions.
+      - generic [ref=e71]: Jan 2011 – Apr 2018
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]: Legodata — Senior Ruby Developer
+        - generic [ref=e75]: Toulouse, France
+        - generic [ref=e76]: Built scalable event management platform for the cultural sector.
+        - list [ref=e77]:
+          - listitem [ref=e78]: • Developed platform managing cultural events with Letsmotiv magazine.
+          - listitem [ref=e79]: • Designed scalable architecture for event data management and publication.
+      - generic [ref=e81]: Jan 2009 – Jan 2011
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e84]: Independent Consultant — Full-Stack Developer
+        - generic [ref=e85]: Europe (Toulouse, Madrid, Berlin)
+        - generic [ref=e86]: Delivered enterprise social platforms for major financial institutions.
+        - list [ref=e87]:
+          - listitem [ref=e88]: • Built feevy.com social aggregation platform processing daily RSS feeds.
+          - listitem [ref=e89]: • Deployed WordPress MU-based blogging platform for BBVA serving 5,000+ employees across 30 countries.
+      - generic [ref=e91]: Jan 2007 – Jan 2009
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: Atchik Realtime — Java Developer
+        - generic [ref=e95]: Toulouse, France
+        - generic [ref=e96]: Developed real-time mobile applications for pre-smartphone era.
+        - list [ref=e97]:
+          - listitem [ref=e98]: • Built WAP-based chat and dating applications.
+      - generic [ref=e100]: Jan 2007 – Jan 2009
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]: CESR (now IRAP) — Java Developer
+        - generic [ref=e104]: Toulouse, France
+        - generic [ref=e105]: Scientific software development for space research.
+        - list [ref=e106]:
+          - listitem [ref=e107]:
+            - text: • Developed
+            - link "Cassis" [ref=e108] [cursor=pointer]:
+              - /url: http://cassis.irap.omp.eu/?page=presentation
+            - text: spectral analytics tool processing astrophysics research data.
+          - listitem [ref=e109]:
+            - text: • Contributed to mission-critical software for the
+            - link "Herschel Space Observatory" [ref=e110] [cursor=pointer]:
+              - /url: https://en.wikipedia.org/wiki/Herschel_Space_Observatory
+            - text: ESA mission.
+      - generic [ref=e112]: Jan 2005 – Jan 2007
+  - generic [ref=e113]:
+    - generic [ref=e114]: Education
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - generic [ref=e117]: IUT de Vannes — DUT, Computer Science
+        - generic [ref=e118]: Vannes, France · Specialized in Software Engineering
+      - generic [ref=e119]: Sept 2000 – June 2002
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]: Sheffield Hallam University — Computer Engineering
+        - generic [ref=e123]: "Sheffield, UK · Erasmus: European exchange program"
+      - generic [ref=e124]: Sept 2002 – Mar 2003
+  - generic [ref=e125]:
+    - generic [ref=e126]: Extracurricular Activities
+    - list [ref=e127]:
+      - listitem [ref=e128]:
+        - text: •
+        - strong [ref=e129]: Photomaton AI
+        - text: ": AI-powered photobooth system in collaboration with"
+        - link "Minutepapillons" [ref=e130] [cursor=pointer]:
+          - /url: https://www.minutepapillons.org/
+        - text: .
+      - listitem [ref=e131]:
+        - text: •
+        - strong [ref=e132]: Tetalab Hackerspace
+        - text: ": Co-founded"
+        - link "Tetalab" [ref=e133] [cursor=pointer]:
+          - /url: https://tetalab.org
+        - text: ", NGO focused on hacker culture and technology education."
+      - listitem [ref=e134]:
+        - text: •
+        - strong [ref=e135]: Open Source Portfolio
+        - text: ": Maintained 358+ repositories including"
+        - link "parasol" [ref=e136] [cursor=pointer]:
+          - /url: https://github.com/alx/parasol
+        - text: (network visualization),
+        - link "react-bounding-box" [ref=e137] [cursor=pointer]:
+          - /url: https://github.com/alx/react-bounding-box
+        - text: (computer vision), and
+        - link "Muse VR Levitation" [ref=e138] [cursor=pointer]:
+          - /url: https://github.com/alx/muse_vr_levitation
+        - text: (hardware integration).
+  - contentinfo [ref=e139]:
+    - link "alexgirard.com" [ref=e140] [cursor=pointer]:
+      - /url: https://alexgirard.com
+    - text: ·
+    - link "Download PDF" [ref=e141] [cursor=pointer]:
+      - /url: /Alex_Girard_resume.pdf
+    - text: · Last updated July 2026

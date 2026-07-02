@@ -9,6 +9,7 @@
     <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta name="keywords" content="{{ delimit (.Params.tags | default .Site.Params.keywords) ", " }}">
     <meta name="author" content="{{ .Site.Params.author.name }}">
+    {{ if .Params.robots }}<meta name="robots" content="{{ .Params.robots }}">{{ end }}
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title | default .Site.Title }}">

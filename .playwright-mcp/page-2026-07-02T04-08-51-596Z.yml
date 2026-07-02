@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "AG" [ref=e4] [cursor=pointer]:
+        - /url: http://localhost:1313/
+        - img "AG" [ref=e5]
+      - navigation [ref=e6]:
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: /#about
+        - link "Mentorship" [ref=e8] [cursor=pointer]:
+          - /url: /#mentorship
+        - link "Experience" [ref=e9] [cursor=pointer]:
+          - /url: /#experience
+        - link "Projects" [ref=e10] [cursor=pointer]:
+          - /url: /#projects
+        - link "Resume" [ref=e11] [cursor=pointer]:
+          - /url: /resume.html
+        - link "Hotline" [ref=e12] [cursor=pointer]:
+          - /url: /#hotline
+          - text: Hotline
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - paragraph [ref=e17]: Early access
+      - heading "You're in." [level=1] [ref=e18]
+      - paragraph [ref=e19]: "I'm opening the hotline to a small group of people this month. Two ways in: send a question below, or grab 15 minutes on the calendar."
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - paragraph [ref=e23]: The hotline
+        - heading "Let's have that coffee." [level=2] [ref=e24]
+        - paragraph [ref=e25]: Think of it as a morning chat with an engineer who's already shipped this. One question, two lines, a real human voice on the other end.
+        - paragraph [ref=e26]: No bot triage. No discovery call. If I'm not the right person, I'll say so and point you somewhere better.
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: Your name
+          - textbox "Your name" [ref=e31]:
+            - /placeholder: Jane Doe
+        - generic [ref=e32]:
+          - generic [ref=e33]: Email
+          - textbox "Email" [ref=e34]:
+            - /placeholder: jane@company.com
+        - generic [ref=e35]:
+          - generic [ref=e36]: Your question, in two lines
+          - textbox "Your question, in two lines" [ref=e37]:
+            - /placeholder: What's broken, what you've tried, what you need to decide.
+        - button "Ring the hotline →" [ref=e38] [cursor=pointer]: Ring the hotline →
+        - paragraph [ref=e40]: Goes straight to a human. No autoresponder, no chatbot.
+    - generic [ref=e42]:
+      - paragraph [ref=e43]: Or, pick a slot.
+      - generic [ref=e45]:
+        - status "Loading" [ref=e48]:
+          - img [ref=e49]
+        - iframe [ref=e51]:
+          
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - paragraph [ref=e54]: © 2026 Alexandre Girard Davila
+      - generic [ref=e55]:
+        - link "GitHub" [ref=e56] [cursor=pointer]:
+          - /url: https://github.com/alx
+        - link "LinkedIn" [ref=e57] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/alxgirard/
