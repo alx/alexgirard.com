@@ -1066,3 +1066,119 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   color: var(--ink);
   margin: 0 0 32px;
 }
+
+/* ============================================================
+   AUDIT PAGE
+   ============================================================ */
+.audit-hero {
+  padding: 80px 24px 64px;
+  text-align: center;
+}
+.audit-hero__kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 22px;
+}
+.audit-hero__title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  margin: 0 0 24px;
+}
+.audit-hero__tagline {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--body);
+  max-width: 560px;
+  margin: 0 auto 16px;
+}
+.audit-hero__price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.audit-tiers {
+  padding: 64px 24px;
+  background: var(--band);
+  border-top: 1px solid var(--hair);
+  border-bottom: 1px solid var(--hair);
+}
+.audit-tiers__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.audit-tier {
+  background: #fff;
+  border: 1px solid var(--hair);
+  border-radius: 12px;
+  padding: 32px;
+}
+.audit-tier--featured {
+  border-color: var(--accent);
+}
+.audit-tier__name {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 12px;
+}
+.audit-tier__price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+.audit-tier__desc {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--body);
+  margin: 0;
+}
+
+.audit-who {
+  padding: 64px 24px;
+}
+.audit-who__label {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 20px;
+}
+.audit-who__text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--body);
+  margin: 0;
+  max-width: 620px;
+}
+
+.audit-cal {
+  padding: 64px 24px 80px;
+  border-top: 1px solid var(--hair);
+}
+.audit-cal__heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 32px;
+}
+
+@media (max-width: 720px) {
+  .audit-tiers__grid {
+    grid-template-columns: 1fr;
+  }
+}

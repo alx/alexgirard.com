@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /family/
 
 # LLM context: https://alexgirard.com/llms.txt
 Sitemap: https://alexgirard.com/sitemap.xml
