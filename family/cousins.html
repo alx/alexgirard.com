@@ -80,6 +80,19 @@
   }
   #chart {
     width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  p.scroll-hint {
+    display: none;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 6px 0 0;
+  }
+  @media (max-width: 700px) {
+    p.scroll-hint {
+      display: block;
+    }
   }
   p.note {
     font-size: 12px;
@@ -119,6 +132,7 @@
     <h1>Grandchildren born by year</h1>
     <p class="subtitle">First cousins (grandchildren of my four grandparents), including myself and my siblings, born each year, 1961&ndash;1990 &mdash; each dot is one person, colored by nuclear family (their parent)</p>
     <div id="chart"></div>
+    <p class="scroll-hint">&larr; Scroll to see all years &rarr;</p>
     <details>
       <summary>Table view</summary>
       <table id="table"></table>
