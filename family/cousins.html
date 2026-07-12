@@ -17,15 +17,15 @@
     --text-muted:     #898781;
     --gridline:       #e1e0d9;
     --baseline:       #c3c2b7;
-    --slot-1: #2a78d6; /* blue    — Michel Girard */
-    --slot-2: #1baf7a; /* aqua    — Patrick Girard */
-    --slot-3: #eda100; /* yellow  — Christian Girard */
-    --slot-4: #008300; /* green   — Marie Girard (Giroud) */
-    --slot-5: #4a3aa7; /* violet  — Bertrand Girard */
-    --slot-6: #e34948; /* red     — Thérèse Girard (Muller) */
-    --slot-7: #e87ba4; /* magenta — Anne Girard */
-    --slot-8: #eb6834; /* orange  — Martine Girard (Porcheron) */
-    --slot-other: #898781; /* muted — Alain Girard (my own parent) */
+    --slot-1: #2a78d6; /* blue    — Michel Girard (b. 1935) */
+    --slot-2: #1baf7a; /* aqua    — Patrick Girard (b. 1936) */
+    --slot-3: #eda100; /* yellow  — Alain Girard (b. 1938, my own parent) */
+    --slot-4: #008300; /* green   — Christian Girard (b. 1941) */
+    --slot-5: #4a3aa7; /* violet  — Marie Girard (Giroud) (b. 1943) */
+    --slot-6: #e34948; /* red     — Bertrand Girard (b. 1946) */
+    --slot-7: #e87ba4; /* magenta — Thérèse Girard (Muller) (b. 1947) */
+    --slot-8: #eb6834; /* orange  — Anne Girard (b. 1950) */
+    --slot-other: #898781; /* muted — Martine Girard (Porcheron) (b. 1952) */
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -36,15 +36,15 @@
       --text-muted:     #898781;
       --gridline:       #2c2c2a;
       --baseline:       #383835;
-      --slot-1: #3987e5;
-      --slot-2: #199e70;
-      --slot-3: #c98500;
-      --slot-4: #008300;
-      --slot-5: #9085e9;
-      --slot-6: #e66767;
-      --slot-7: #d55181;
-      --slot-8: #d95926;
-      --slot-other: #898781;
+      --slot-1: #3987e5; /* Michel Girard */
+      --slot-2: #199e70; /* Patrick Girard */
+      --slot-3: #c98500; /* Alain Girard */
+      --slot-4: #008300; /* Christian Girard */
+      --slot-5: #9085e9; /* Marie Girard */
+      --slot-6: #e66767; /* Bertrand Girard */
+      --slot-7: #d55181; /* Thérèse Girard */
+      --slot-8: #d95926; /* Anne Girard */
+      --slot-other: #898781; /* Martine Girard */
     }
   }
   body {
@@ -125,6 +125,69 @@
     color: var(--text-muted);
     font-weight: 600;
   }
+  #legend {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 20px;
+    margin-top: 14px;
+    font-size: 12px;
+  }
+  @media (max-width: 560px) {
+    #legend {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .legend-group h3 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .legend-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .legend-group ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-secondary);
+    list-style: none;
+    padding-left: 0;
+  }
+  .legend-group li {
+    line-height: 1.5;
+  }
+  .age-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+  }
+  .age-toggle input {
+    cursor: pointer;
+  }
+  .age-badge {
+    display: none;
+    margin-left: 5px;
+    padding: 1px 6px;
+    border-radius: 8px;
+    background: var(--gridline);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  #legend.show-age .age-badge {
+    display: inline-block;
+  }
 </style>
 </head>
 <body>
@@ -133,6 +196,8 @@
     <p class="subtitle">First cousins (grandchildren of my four grandparents), including myself and my siblings, born each year, 1961&ndash;1990 &mdash; each dot is one person, colored by nuclear family (their parent)</p>
     <div id="chart"></div>
     <p class="scroll-hint">&larr; Scroll to see all years &rarr;</p>
+    <label class="age-toggle"><input type="checkbox" id="age-toggle" /> Show parent's age at birth</label>
+    <div id="legend"></div>
     <details>
       <summary>Table view</summary>
       <table id="table"></table>
@@ -174,16 +239,34 @@ const people = [
   { year: 1982, name: "Alexandre Girard", parent: "Alain Girard" }
 ];
 
+// ordered by parent's own birth year (1935–1952), see alain-siblings-births-by-year.html
 const parentOrder = [
-  "Michel Girard", "Patrick Girard", "Christian Girard", "Marie Girard",
-  "Bertrand Girard", "Thérèse Girard", "Anne Girard", "Martine Girard",
-  "Alain Girard"
+  "Michel Girard", "Patrick Girard", "Alain Girard", "Christian Girard",
+  "Marie Girard", "Bertrand Girard", "Thérèse Girard", "Anne Girard",
+  "Martine Girard"
 ];
 
-// stack rank within each year, ordered by parentOrder for stable layout
+const parentBirthYear = {
+  "Michel Girard": 1935, "Patrick Girard": 1936, "Alain Girard": 1938,
+  "Christian Girard": 1941, "Marie Girard": 1943, "Bertrand Girard": 1946,
+  "Thérèse Girard": 1947, "Anne Girard": 1950, "Martine Girard": 1952
+};
+
+// sibling index: 1 for the first-born of each parent, incrementing per sibling by birth year;
+// also the parent's age at each child's birth, used in the legend
+const sibIndex = {};
+[...people]
+  .sort((a, b) => a.year - b.year)
+  .forEach(p => {
+    sibIndex[p.parent] = (sibIndex[p.parent] || 0) + 1;
+    p.sib = sibIndex[p.parent];
+    p.parentAge = p.year - parentBirthYear[p.parent];
+  });
+
+// stack rank within each year: lowest sibling number at the bottom row, higher numbers stacked above
 const seen = {};
 const values = [...people]
-  .sort((a, b) => a.year - b.year || parentOrder.indexOf(a.parent) - parentOrder.indexOf(b.parent))
+  .sort((a, b) => a.year - b.year || a.sib - b.sib || parentOrder.indexOf(a.parent) - parentOrder.indexOf(b.parent))
   .map(p => {
     seen[p.year] = (seen[p.year] || 0) + 1;
     return { ...p, rank: seen[p.year] };
@@ -200,38 +283,53 @@ const colorRange = [
   cssVar("--slot-other")
 ];
 
+const sharedEncoding = {
+  x: {
+    field: "year", type: "ordinal", sort: "ascending",
+    scale: { domain: years },
+    title: "Year",
+    axis: { labelAngle: -40, labelFontSize: 9, titleFontSize: 12, domainColor: "#c3c2b7", tickColor: "#c3c2b7", labelColor: "#52514e", titleColor: "#52514e" }
+  },
+  y: {
+    field: "rank", type: "quantitative",
+    title: null,
+    scale: { domain: [0, 4], nice: false },
+    axis: null
+  }
+};
+
 const spec = {
   $schema: "https://vega.github.io/schema/vega-lite/v5.json",
   width: { step: 24 },
   height: 160,
   background: null,
   data: { values },
-  mark: { type: "circle", size: 150, opacity: 1 },
-  encoding: {
-    x: {
-      field: "year", type: "ordinal", sort: "ascending",
-      scale: { domain: years },
-      title: "Year",
-      axis: { labelAngle: -40, labelFontSize: 9, titleFontSize: 12, domainColor: "#c3c2b7", tickColor: "#c3c2b7", labelColor: "#52514e", titleColor: "#52514e" }
+  encoding: sharedEncoding,
+  layer: [
+    {
+      mark: { type: "circle", size: 280, opacity: 1 },
+      encoding: {
+        color: {
+          field: "parent", type: "nominal",
+          scale: { domain: parentOrder, range: colorRange },
+          legend: null
+        },
+        tooltip: [
+          { field: "name", type: "nominal", title: "Name" },
+          { field: "sib", type: "ordinal", title: "#" },
+          { field: "year", type: "ordinal", title: "Year" },
+          { field: "parent", type: "nominal", title: "Parent" }
+        ]
+      }
     },
-    y: {
-      field: "rank", type: "quantitative",
-      title: null,
-      scale: { domain: [0, 4], nice: false },
-      axis: null
-    },
-    color: {
-      field: "parent", type: "nominal",
-      title: "Parent",
-      scale: { domain: parentOrder, range: colorRange },
-      legend: { symbolSize: 90, labelFontSize: 11, titleFontSize: 12, labelColor: "#52514e", titleColor: "#52514e", orient: "bottom", columns: 3, direction: "horizontal" }
-    },
-    tooltip: [
-      { field: "name", type: "nominal", title: "Name" },
-      { field: "year", type: "ordinal", title: "Year" },
-      { field: "parent", type: "nominal", title: "Parent" }
-    ]
-  },
+    {
+      mark: { type: "text", fontSize: 10, fontWeight: "bold", baseline: "middle", dy: 0.5 },
+      encoding: {
+        text: { field: "sib", type: "nominal" },
+        color: { value: "#ffffff" }
+      }
+    }
+  ],
   config: {
     view: { stroke: null },
     axis: { grid: false }
@@ -240,11 +338,28 @@ const spec = {
 
 vegaEmbed("#chart", spec, { actions: false });
 
+// custom legend: parent + color swatch, kids listed in birth order; parent's age at each
+// birth is tucked into a badge that's hidden by default and revealed via the toggle below
+const legendEl = document.getElementById("legend");
+legendEl.innerHTML = parentOrder.map((parent, i) => {
+  const kids = people
+    .filter(p => p.parent === parent)
+    .sort((a, b) => a.sib - b.sib);
+  return `<div class="legend-group">
+    <h3><span class="legend-swatch" style="background:${colorRange[i]}"></span>${parent}</h3>
+    <ul>${kids.map(k => `<li>${k.name} (${k.year})<span class="age-badge">${k.parentAge}</span></li>`).join("")}</ul>
+  </div>`;
+}).join("");
+
+document.getElementById("age-toggle").addEventListener("change", e => {
+  legendEl.classList.toggle("show-age", e.target.checked);
+});
+
 // table view (accessibility fallback for the relief-rule colors)
 const tbl = document.getElementById("table");
 const rows = [...people].sort((a, b) => a.year - b.year);
-tbl.innerHTML = "<thead><tr><th>Year</th><th>Name</th><th>Parent</th></tr></thead><tbody>" +
-  rows.map(p => `<tr><td>${p.year}</td><td>${p.name}</td><td>${p.parent}</td></tr>`).join("") +
+tbl.innerHTML = "<thead><tr><th>Year</th><th>Name</th><th>Parent</th><th>#</th></tr></thead><tbody>" +
+  rows.map(p => `<tr><td>${p.year}</td><td>${p.name}</td><td>${p.parent}</td><td>${p.sib}</td></tr>`).join("") +
   "</tbody>";
 </script>
 </body>
