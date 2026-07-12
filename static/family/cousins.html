@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cousins born by year — Girard/Le Gall family tree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page-plane:      #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline:       #c3c2b7;
+    --slot-1: #2a78d6; /* blue    — Michel Girard */
+    --slot-2: #1baf7a; /* aqua    — Patrick Girard */
+    --slot-3: #eda100; /* yellow  — Christian Girard */
+    --slot-4: #008300; /* green   — Marie Girard (Giroud) */
+    --slot-5: #4a3aa7; /* violet  — Bertrand Girard */
+    --slot-6: #e34948; /* red     — Thérèse Girard (Muller) */
+    --slot-7: #e87ba4; /* magenta — Anne Girard */
+    --slot-8: #eb6834; /* orange  — Martine Girard (Porcheron) */
+    --slot-other: #898781; /* muted — Alain Girard (my own parent) */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #1a1a19;
+      --page-plane:      #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --baseline:       #383835;
+      --slot-1: #3987e5;
+      --slot-2: #199e70;
+      --slot-3: #c98500;
+      --slot-4: #008300;
+      --slot-5: #9085e9;
+      --slot-6: #e66767;
+      --slot-7: #d55181;
+      --slot-8: #d95926;
+      --slot-other: #898781;
+    }
+  }
+  body {
+    margin: 0;
+    padding: 32px 16px;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .card {
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 24px 28px 16px;
+    box-shadow: 0 1px 3px rgba(11,11,11,0.08);
+    max-width: 960px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--text-primary);
+  }
+  p.subtitle {
+    margin: 0 0 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  #chart {
+    width: 100%;
+  }
+  p.note {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 960px;
+    margin: 4px 0 0;
+  }
+  details {
+    margin-top: 16px;
+    font-size: 13px;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  table {
+    border-collapse: collapse;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 12px;
+  }
+  th, td {
+    text-align: left;
+    padding: 4px 10px 4px 0;
+    border-bottom: 1px solid var(--gridline);
+    color: var(--text-secondary);
+  }
+  th {
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Grandchildren born by year</h1>
+    <p class="subtitle">First cousins (grandchildren of my four grandparents), including myself and my siblings, born each year, 1961&ndash;1990 &mdash; each dot is one person, colored by nuclear family (their parent)</p>
+    <div id="chart"></div>
+    <details>
+      <summary>Table view</summary>
+      <table id="table"></table>
+    </details>
+  </div>
+  <p class="note">Source: GEDCOM export <code>girard-davila-tree.ged</code>. Encoding shape assembled with
+    <a href="https://microsoft.github.io/flint-chart/" style="color:inherit">Flint Chart</a>'s <code>assembleVegaLite()</code>
+    (see <code>flint-chart-spec.vega-lite.json</code>); a dot/unit plot since counts per year are small (0&ndash;2) &mdash;
+    this shows every year including the empty ones without a wall of empty bars. 4 cousins with a FAMC link but no
+    recorded birth date are excluded (Yvan, Johann &amp; Raphaël Guillemot; Pierrick Le Gall). Cécile Besnier is
+    excluded as a cousin by marriage, not a direct blood relation to the Girard family.</p>
+
+<script>
+const people = [
+  { year: 1961, name: "Stéphane Girard", parent: "Michel Girard" },
+  { year: 1965, name: "Pierre Girard", parent: "Michel Girard" },
+  { year: 1963, name: "Sandrine Girard", parent: "Patrick Girard" },
+  { year: 1968, name: "Dorothée Girard", parent: "Patrick Girard" },
+  { year: 1979, name: "Matthias Girard", parent: "Patrick Girard" },
+  { year: 1970, name: "Nathalie Girard", parent: "Christian Girard" },
+  { year: 1973, name: "Raphaël Girard", parent: "Christian Girard" },
+  { year: 1978, name: "Sébastien Girard", parent: "Christian Girard" },
+  { year: 1965, name: "Thierry-Noël Giroud", parent: "Marie Girard" },
+  { year: 1967, name: "Anne-Soizic Giroud", parent: "Marie Girard" },
+  { year: 1974, name: "Jean-Frédéric Giroud", parent: "Marie Girard" },
+  { year: 1981, name: "Pierre-Xavier Giroud", parent: "Marie Girard" },
+  { year: 1974, name: "Amandine Girard", parent: "Bertrand Girard" },
+  { year: 1977, name: "Eléonore Girard", parent: "Bertrand Girard" },
+  { year: 1980, name: "Hugues Girard", parent: "Bertrand Girard" },
+  { year: 1978, name: "Maud Muller", parent: "Thérèse Girard" },
+  { year: 1983, name: "Amélie Muller", parent: "Thérèse Girard" },
+  { year: 1969, name: "Laetitia Marzorati", parent: "Anne Girard" },
+  { year: 1970, name: "Sophie Marzorati", parent: "Anne Girard" },
+  { year: 1984, name: "Julien Porcheron", parent: "Martine Girard" },
+  { year: 1987, name: "Antoine Porcheron", parent: "Martine Girard" },
+  { year: 1990, name: "Laurent Porcheron", parent: "Martine Girard" },
+  { year: 1966, name: "Muriel Girard", parent: "Alain Girard" },
+  { year: 1971, name: "Florent Girard", parent: "Alain Girard" },
+  { year: 1982, name: "Alexandre Girard", parent: "Alain Girard" }
+];
+
+const parentOrder = [
+  "Michel Girard", "Patrick Girard", "Christian Girard", "Marie Girard",
+  "Bertrand Girard", "Thérèse Girard", "Anne Girard", "Martine Girard",
+  "Alain Girard"
+];
+
+// stack rank within each year, ordered by parentOrder for stable layout
+const seen = {};
+const values = [...people]
+  .sort((a, b) => a.year - b.year || parentOrder.indexOf(a.parent) - parentOrder.indexOf(b.parent))
+  .map(p => {
+    seen[p.year] = (seen[p.year] || 0) + 1;
+    return { ...p, rank: seen[p.year] };
+  });
+
+const minYear = 1961, maxYear = 1990;
+const years = [];
+for (let y = minYear; y <= maxYear; y++) years.push(y);
+
+const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const colorRange = [
+  cssVar("--slot-1"), cssVar("--slot-2"), cssVar("--slot-3"), cssVar("--slot-4"),
+  cssVar("--slot-5"), cssVar("--slot-6"), cssVar("--slot-7"), cssVar("--slot-8"),
+  cssVar("--slot-other")
+];
+
+const spec = {
+  $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+  width: { step: 24 },
+  height: 160,
+  background: null,
+  data: { values },
+  mark: { type: "circle", size: 150, opacity: 1 },
+  encoding: {
+    x: {
+      field: "year", type: "ordinal", sort: "ascending",
+      scale: { domain: years },
+      title: "Year",
+      axis: { labelAngle: -40, labelFontSize: 9, titleFontSize: 12, domainColor: "#c3c2b7", tickColor: "#c3c2b7", labelColor: "#52514e", titleColor: "#52514e" }
+    },
+    y: {
+      field: "rank", type: "quantitative",
+      title: null,
+      scale: { domain: [0, 4], nice: false },
+      axis: null
+    },
+    color: {
+      field: "parent", type: "nominal",
+      title: "Parent",
+      scale: { domain: parentOrder, range: colorRange },
+      legend: { symbolSize: 90, labelFontSize: 11, titleFontSize: 12, labelColor: "#52514e", titleColor: "#52514e", orient: "bottom", columns: 3, direction: "horizontal" }
+    },
+    tooltip: [
+      { field: "name", type: "nominal", title: "Name" },
+      { field: "year", type: "ordinal", title: "Year" },
+      { field: "parent", type: "nominal", title: "Parent" }
+    ]
+  },
+  config: {
+    view: { stroke: null },
+    axis: { grid: false }
+  }
+};
+
+vegaEmbed("#chart", spec, { actions: false });
+
+// table view (accessibility fallback for the relief-rule colors)
+const tbl = document.getElementById("table");
+const rows = [...people].sort((a, b) => a.year - b.year);
+tbl.innerHTML = "<thead><tr><th>Year</th><th>Name</th><th>Parent</th></tr></thead><tbody>" +
+  rows.map(p => `<tr><td>${p.year}</td><td>${p.name}</td><td>${p.parent}</td></tr>`).join("") +
+  "</tbody>";
+</script>
+</body>
+</html>

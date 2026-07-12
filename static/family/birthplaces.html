@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Birthplaces — René &amp; Marguerite-Marie Girard family tree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --surface-1:      #fcfcfb;
+    --page-plane:      #f9f9f7;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --series-1:       #2a78d6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --surface-1:      #1a1a19;
+      --page-plane:      #0d0d0d;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #898781;
+      --gridline:       #2c2c2a;
+      --series-1:       #3987e5;
+    }
+  }
+  body {
+    margin: 0;
+    padding: 32px 16px;
+    background: var(--page-plane);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .card {
+    background: var(--surface-1);
+    border-radius: 12px;
+    padding: 24px 28px 20px;
+    box-shadow: 0 1px 3px rgba(11,11,11,0.08);
+    max-width: 900px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--text-primary);
+  }
+  p.subtitle {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  #map {
+    width: 100%;
+    height: 520px;
+    border-radius: 8px;
+    border: 1px solid var(--gridline);
+  }
+  p.note {
+    font-size: 12px;
+    color: var(--text-muted);
+    max-width: 900px;
+    margin: 12px 0 0;
+  }
+  .leaflet-popup-content-wrapper {
+    background: var(--surface-1);
+    color: var(--text-primary);
+  }
+  .leaflet-popup-content b {
+    color: var(--text-primary);
+  }
+  .leaflet-popup-content ul {
+    margin: 4px 0 0;
+    padding-left: 16px;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Birthplaces &mdash; René &amp; Marguerite-Marie Girard's family tree</h1>
+    <p class="subtitle">René &amp; Marguerite-Marie, their 9 children (incl. my father Alain), and their grandchildren (my cousins, siblings and me) &mdash; 26 of 40 people with a recorded birthplace. Circle size = number of people born there.</p>
+    <div id="map"></div>
+  </div>
+  <p class="note">Source: GEDCOM export <code>girard-davila-tree.ged</code>. 14 people in this branch have no recorded
+    <code>BIRT</code>/<code>PLAC</code> (Michel, Bertrand &amp; Martine Girard; Pierre Girard; Maud Muller; Cécile Besnier;
+    Laetitia Marzorati; the 3 Porcheron siblings; and the 4 unbirthdated cousins from the earlier charts). Coordinates are
+    town centroids, not exact addresses.</p>
+
+<script>
+const places = [
+  { name: "Le Mans", lat: 48.0061, lon: 0.1996, people: [
+    ["René Girard", "1906"], ["Alain Girard (my father)", "1938"], ["Patrick Girard", "1936"],
+    ["Christian Girard", "1941"], ["Marie Girard", "1943"], ["Thérèse Girard", "1947"], ["Anne Girard", "1950"],
+    ["Sandrine Girard", "1963"], ["Dorothée Girard", "1968"], ["Thierry-Noël Giroud", "1965"],
+    ["Anne-Soizic Giroud", "1967"], ["Jean-Frédéric Giroud", "1974"], ["Pierre-Xavier Giroud", "1981"],
+    ["Hugues Girard", "1980"], ["Amélie Muller", "1983"], ["Sophie Marzorati", "1970"]
+  ]},
+  { name: "Rouen", lat: 49.4431, lon: 1.0993, people: [["Stéphane Girard", "1961"], ["Muriel Girard", "1966"]] },
+  { name: "Calais", lat: 50.9513, lon: 1.8587, people: [["Marguerite-Marie", "1910"]] },
+  { name: "Chevreuse", lat: 48.7075, lon: 2.0392, people: [["Matthias Girard", "1979"]] },
+  { name: "Le Raincy", lat: 48.8967, lon: 2.5147, people: [["Nathalie Girard", "1970"]] },
+  { name: "Versailles", lat: 48.8049, lon: 2.1204, people: [["Raphaël Girard", "1973"]] },
+  { name: "Clamart", lat: 48.8022, lon: 2.2645, people: [["Sébastien Girard", "1978"]] },
+  { name: "Nantes", lat: 47.2184, lon: -1.5536, people: [["Amandine Girard", "1974"]] },
+  { name: "Brest", lat: 48.3904, lon: -4.4861, people: [["Florent Girard", "1971"]] },
+  { name: "Quimper", lat: 47.9960, lon: -4.1024, people: [["Alexandre Girard (me)", "1982"]] }
+];
+
+const map = L.map("map", { scrollWheelZoom: false }).setView([47.8, -0.5], 6);
+L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
+  attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+  maxZoom: 18
+}).addTo(map);
+
+const seriesColor = getComputedStyle(document.documentElement).getPropertyValue("--series-1").trim();
+
+places.forEach(p => {
+  const radius = 6 + Math.sqrt(p.people.length) * 8;
+  const marker = L.circleMarker([p.lat, p.lon], {
+    radius,
+    color: seriesColor,
+    weight: 1.5,
+    fillColor: seriesColor,
+    fillOpacity: 0.45
+  }).addTo(map);
+  const list = p.people.map(([n, y]) => `<li>${n} (${y})</li>`).join("");
+  marker.bindPopup(`<b>${p.name}</b> &mdash; ${p.people.length} born here<ul>${list}</ul>`);
+});
+</script>
+</body>
+</html>
