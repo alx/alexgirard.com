@@ -5,6 +5,7 @@ title: Alexandre Girard Davila
 params:
   description: "I fix agentic AI that works in the demo and breaks in production. Twenty years shipping ML for Airbus, Cartier, SNCF, and Tate."
   keywords: ["agentic AI", "AI production reliability", "AI debugging", "LLM agents", "computer vision", "ML engineering", "AI consultant"]
+  image: "/android-chrome-512x512.png"
   author:
     name: Alexandre Girard Davila
     email: alex@girard-davila.net
