@@ -52,28 +52,40 @@ document.addEventListener('DOMContentLoaded', function () {
             return el ? el.textContent.trim() : '';
           }
 
+          // Parse the HTML description once: used for text and to find a source link.
+          var descDiv = null;
+          var sourceHref = '';
+          if (descEl) {
+            descDiv = document.createElement('div');
+            descDiv.innerHTML = descEl.textContent;
+            var firstLink = descDiv.querySelector('a');
+            if (firstLink) {
+              sourceHref = firstLink.getAttribute('href') || '';
+            }
+          }
+
           // Mastodon items have no <title>; fall back to the HTML description.
           var title = textFrom(titleEl);
-          if (!title && descEl) {
-            var div = document.createElement('div');
-            div.innerHTML = descEl.textContent;
-            title = (div.textContent || '').replace(/\s+/g, ' ').trim();
+          if (!title && descDiv) {
+            title = (descDiv.textContent || '').replace(/\s+/g, ' ').trim();
             if (title.length > 140) {
               title = title.slice(0, 140).replace(/\s+\S*$/, '') + '…';
             }
           }
+
+          // Mastodon prepends 🔖 to bookmarks; treat them as links to the source site.
+          var isBookmark = title.indexOf('🔖') === 0;
 
           var li = document.createElement('li');
           li.className = 'latest__item';
 
           var a = document.createElement('a');
           a.className = 'latest__link';
-          a.href = textFrom(linkEl) || '#';
+          a.href = (isBookmark && sourceHref) ? sourceHref : (textFrom(linkEl) || '#');
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
 
-          // Mastodon prepends 🔖 to bookmarks; render as an accent bullet instead.
-          if (title.indexOf('🔖') === 0) {
+          if (isBookmark) {
             title = title.slice('🔖'.length).trim();
             var bullet = document.createElement('span');
             bullet.className = 'latest__bullet';
