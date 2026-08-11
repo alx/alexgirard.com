@@ -287,6 +287,9 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   align-items: center;
   gap: 8px;
 }
+.social__link i {
+  color: var(--accent);
+}
 
 /* ============================================================
    ABOUT
