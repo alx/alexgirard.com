@@ -44,18 +44,34 @@ document.addEventListener('DOMContentLoaded', function () {
         latestList.innerHTML = '';
         items.slice(0, 5).forEach(function (item) {
           var titleEl = item.querySelector('title');
+          var descEl = item.querySelector('description');
           var linkEl = item.querySelector('link');
           var pubEl = item.querySelector('pubDate');
+
+          function textFrom(el) {
+            return el ? el.textContent.trim() : '';
+          }
+
+          // Mastodon items have no <title>; fall back to the HTML description.
+          var title = textFrom(titleEl);
+          if (!title && descEl) {
+            var div = document.createElement('div');
+            div.innerHTML = descEl.textContent;
+            title = (div.textContent || '').replace(/\s+/g, ' ').trim();
+            if (title.length > 140) {
+              title = title.slice(0, 140).replace(/\s+\S*$/, '') + '…';
+            }
+          }
 
           var li = document.createElement('li');
           li.className = 'latest__item';
 
           var a = document.createElement('a');
           a.className = 'latest__link';
-          a.href = linkEl ? linkEl.textContent.trim() : '#';
+          a.href = textFrom(linkEl) || '#';
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
-          a.textContent = titleEl ? titleEl.textContent.trim() : '(untitled)';
+          a.textContent = title || '(untitled)';
           li.appendChild(a);
 
           if (pubEl && pubEl.textContent) {
