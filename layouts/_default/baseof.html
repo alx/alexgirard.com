@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <title>{{ if and .Title (ne .Kind "home") }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="{{ .Params.description | default .Site.Params.description }}">
