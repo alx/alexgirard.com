@@ -27,4 +27,56 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // ── Latest Mastodon posts ───────────────────────────────────
+  var latestList = document.getElementById('latest-list');
+
+  if (latestList) {
+    var feedUrl = 'https://mastodon.tetaneutral.net/@alx.rss';
+    var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
+
+    fetch(proxy)
+      .then(function (res) {
+        if (!res.ok) throw new Error('feed request failed');
+        return res.text();
+      })
+      .then(function (xml) {
+        var doc = new DOMParser().parseFromString(xml, 'text/xml');
+        var items = Array.prototype.slice.call(doc.querySelectorAll('item'));
+        latestList.innerHTML = '';
+        items.slice(0, 5).forEach(function (item) {
+          var titleEl = item.querySelector('title');
+          var linkEl = item.querySelector('link');
+          var pubEl = item.querySelector('pubDate');
+
+          var li = document.createElement('li');
+          li.className = 'latest__item';
+
+          var a = document.createElement('a');
+          a.className = 'latest__link';
+          a.href = linkEl ? linkEl.textContent.trim() : '#';
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = titleEl ? titleEl.textContent.trim() : '(untitled)';
+          li.appendChild(a);
+
+          if (pubEl && pubEl.textContent) {
+            var date = new Date(pubEl.textContent);
+            if (!isNaN(date.getTime())) {
+              var t = document.createElement('span');
+              t.className = 'latest__date';
+              t.textContent = date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+              li.appendChild(t);
+            }
+          }
+
+          latestList.appendChild(li);
+        });
+      })
+      .catch(function () {
+        if (latestList) {
+          latestList.innerHTML = '<li class="latest__error">Could not load latest posts.</li>';
+        }
+      });
+  }
+
 });

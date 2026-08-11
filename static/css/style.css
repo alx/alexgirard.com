@@ -292,6 +292,77 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
 }
 
 /* ============================================================
+   LATEST
+   ============================================================ */
+.latest {
+  background: var(--band);
+  padding: 110px 24px;
+  border-top: 1px solid var(--hair);
+}
+.latest__title {
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.latest__sub {
+  font-size: 17px;
+  color: var(--muted, #666);
+  margin: 0 0 32px;
+}
+.latest__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.latest__item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.latest__item:first-child {
+  padding-top: 0;
+}
+.latest__link {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.5;
+}
+.latest__link:hover {
+  color: var(--accent);
+}
+.latest__date {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--muted, #666);
+}
+.latest__loading,
+.latest__error {
+  font-size: 16px;
+  color: var(--muted, #666);
+}
+.latest__error {
+  color: var(--accent);
+}
+.latest__more {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+.latest__more:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
    ABOUT
    ============================================================ */
 .about {
