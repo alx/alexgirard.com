@@ -32,9 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (latestList) {
     var feedUrl = 'https://mastodon.tetaneutral.net/@alx.rss';
-    var proxy = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(feedUrl);
 
-    fetch(proxy)
+    fetch(feedUrl)
       .then(function (res) {
         if (!res.ok) throw new Error('feed request failed');
         return res.text();
