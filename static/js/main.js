@@ -71,7 +71,16 @@ document.addEventListener('DOMContentLoaded', function () {
           a.href = textFrom(linkEl) || '#';
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
-          a.textContent = title || '(untitled)';
+
+          // Mastodon prepends 🔖 to bookmarks; render as an accent bullet instead.
+          if (title.indexOf('🔖') === 0) {
+            title = title.slice('🔖'.length).trim();
+            var bullet = document.createElement('span');
+            bullet.className = 'latest__bullet';
+            bullet.setAttribute('aria-hidden', 'true');
+            a.appendChild(bullet);
+          }
+          a.appendChild(document.createTextNode(title || '(untitled)'));
           li.appendChild(a);
 
           if (pubEl && pubEl.textContent) {
