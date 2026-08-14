@@ -365,7 +365,9 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
   color: var(--accent);
 }
 .latest__more {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 20px;
   font-size: 15px;
   font-weight: 600;
