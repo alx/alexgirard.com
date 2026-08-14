@@ -55,12 +55,29 @@ document.addEventListener('DOMContentLoaded', function () {
           // Parse the HTML description once: used for text and to find a source link.
           var descDiv = null;
           var sourceHref = '';
+          var isBookmark = false;
           if (descEl) {
             descDiv = document.createElement('div');
             descDiv.innerHTML = descEl.textContent;
             var firstLink = descDiv.querySelector('a');
             if (firstLink) {
               sourceHref = firstLink.getAttribute('href') || '';
+            }
+            // Mastodon prepends 🔖 to bookmarks; treat them as links to the source site.
+            // Check the rendered text of descDiv (descEl.textContent is raw markup).
+            isBookmark = (descDiv.textContent || '').indexOf('🔖') === 0;
+            // Drop the URL-hiding spans Mastodon uses so extracted text
+            // doesn't include the source URL.
+            var hideSpans = descDiv.querySelectorAll('span.invisible, span.ellipsis');
+            Array.prototype.forEach.call(hideSpans, function (s) {
+              s.parentNode.removeChild(s);
+            });
+            // For bookmarks the trailing anchor is the raw source URL; drop it too.
+            if (isBookmark) {
+              var anchors = descDiv.querySelectorAll('a');
+              Array.prototype.forEach.call(anchors, function (anc) {
+                anc.parentNode.removeChild(anc);
+              });
             }
           }
 
@@ -72,9 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
               title = title.slice(0, 140).replace(/\s+\S*$/, '') + '…';
             }
           }
-
-          // Mastodon prepends 🔖 to bookmarks; treat them as links to the source site.
-          var isBookmark = title.indexOf('🔖') === 0;
 
           var li = document.createElement('li');
           li.className = 'latest__item';
