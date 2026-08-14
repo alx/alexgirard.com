@@ -62,6 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
             if (firstLink) {
               sourceHref = firstLink.getAttribute('href') || '';
             }
+            // Drop the URL-hiding spans Mastodon uses so extracted text
+            // doesn't include the source URL.
+            var hideSpans = descDiv.querySelectorAll('span.invisible, span.ellipsis');
+            Array.prototype.forEach.call(hideSpans, function (s) {
+              s.parentNode.removeChild(s);
+            });
           }
 
           // Mastodon items have no <title>; fall back to the HTML description.
