@@ -567,6 +567,11 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
 }
 .what-cell--dark .what-cell__title { color: #fff; }
 .what-cell--dark .what-cell__text  { color: #aeb6c2; margin: 0 0 16px; }
+.what-cell--dark .site-nav__hotline {
+  padding: 8px 14px;
+  font-size: 13px;
+  align-self: flex-start;
+}
 .what-cell--dark .what-cell__link  {
   text-decoration: none;
   color: var(--accent);
