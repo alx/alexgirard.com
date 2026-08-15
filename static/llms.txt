@@ -16,6 +16,27 @@
 - [React Bounding Box](https://github.com/alx/react-bounding-box): HTML Canvas library for displaying bounding boxes on images with React integration
 - [DeepDetect JS](https://github.com/jolibrain/deepdetect-js): JavaScript client library for the DeepDetect deep learning server
 
+## Resume
+
+- [Resume](https://alexgirard.com/resume.html): Full CV including experience, skills, and contact information
+- [Resume PDF](https://alexgirard.com/Alex_Girard_resume.pdf): Downloadable PDF version
+
+## Projects
+
+- [Colette](https://colette.chat): Production-ready self-hosted RAG and LLM serving platform for enterprise AI infrastructure
+- [Recognition](https://github.com/jolibrain/recognition): IK Prize 2016 winner at Tate Britain - AI installation comparing photojournalism with British art collection, built with Microsoft and Fabrica
+- [JoliGen](https://joligen.com): AI-powered generative art platform used by Cartier for luxury retail experiences
+- [Parasol](https://github.com/alx/parasol): Network graph exploration tool for visualizing complex data relationships
+- [React Bounding Box](https://github.com/alx/react-bounding-box): HTML Canvas library for displaying bounding boxes on images with React
+- [DeepDetect JS](https://github.com/jolibrain/deepdetect-js): JavaScript client library for the DeepDetect deep learning server
+
+## Contact
+
+- [Email](mailto:alex@girard-davila.net): alex@girard-davila.net
+- [Hotline form](https://alexgirard.com/#hotline): Short questions; a real human responds
+- [Curated links](https://mastodon.tetaneutral.net/@alx): Curated links and posts on Mastodon
+- [Mastodon RSS](https://mastodon.tetaneutral.net/@alx.rss): RSS feed of latest curated links
+
 ## Optional
 
 - [GitHub](https://github.com/alx): Full portfolio of open-source contributions and projects
