@@ -508,7 +508,7 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
    WHAT WE WORK ON
    ============================================================ */
 .what {
-  background: var(--band);
+  background: #ffffff;
   padding: 100px 24px;
   border-top: 1px solid var(--hair);
   border-bottom: 1px solid var(--hair);
