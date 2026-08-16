@@ -5,24 +5,58 @@ document.addEventListener('DOMContentLoaded', function () {
   var menu = document.getElementById('mobile-menu');
 
   if (btn && menu) {
+
+    function closeMenu() {
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.focus();
+    }
+
+    function openMenu() {
+      menu.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      // Focus first link in the menu
+      var firstLink = menu.querySelector('.site-nav__mobile-link, .site-nav__mobile-hotline');
+      if (firstLink) firstLink.focus();
+    }
+
     btn.addEventListener('click', function () {
-      var open = menu.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      var open = menu.classList.contains('open');
+      if (open) { closeMenu(); }
+      else      { openMenu(); }
     });
 
     menu.querySelectorAll('.site-nav__mobile-link, .site-nav__mobile-hotline')
       .forEach(function (link) {
-        link.addEventListener('click', function () {
-          menu.classList.remove('open');
-          btn.setAttribute('aria-expanded', 'false');
-        });
+        link.addEventListener('click', closeMenu);
       });
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        btn.focus();
+        closeMenu();
+      }
+
+      // Trap focus inside the mobile menu when open
+      if (e.key === 'Tab' && menu.classList.contains('open')) {
+        var focusable = menu.querySelectorAll(
+          '.site-nav__mobile-link, .site-nav__mobile-hotline, a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+
+        var first = focusable[0];
+        var last  = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     });
   }
@@ -127,6 +161,30 @@ document.addEventListener('DOMContentLoaded', function () {
           latestList.innerHTML = '<li class="latest__error">Could not load latest posts.</li>';
         }
       });
+  }
+
+  // ── Form submit loading feedback ──────────────────────────────
+  var form = document.getElementById('hotline-form');
+  if (form) {
+    var submitBtn = form.querySelector('[data-fs-submit-btn]');
+    form.addEventListener('submit', function () {
+      if (submitBtn) {
+        submitBtn.classList.add('form-submit--loading');
+        submitBtn.disabled = true;
+      }
+    });
+
+    // Observe Formspree AJAX events to re-enable button
+    // Formspree dispatches custom events on the form element
+    var formspreeEvents = ['formspree:success', 'formspree:error', 'fs:success', 'fs:error'];
+    formspreeEvents.forEach(function (eventName) {
+      form.addEventListener(eventName, function () {
+        if (submitBtn) {
+          submitBtn.classList.remove('form-submit--loading');
+          submitBtn.disabled = false;
+        }
+      });
+    });
   }
 
 });
