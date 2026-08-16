@@ -27,6 +27,25 @@
     <meta name="twitter:description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta name="twitter:image" content="{{ (.Params.image | default .Site.Params.image) | absURL }}">
 
+    <!-- JSON-LD Person Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ .Site.Params.author.name }}",
+      "url": "{{ .Site.BaseURL }}",
+      "email": "{{ .Site.Params.author.email }}",
+      "jobTitle": "Senior Software Engineer",
+      "description": "{{ .Site.Params.description }}",
+      "sameAs": [
+        "https://github.com/alx",
+        "https://www.linkedin.com/in/alxgirard/",
+        "https://mastodon.tetaneutral.net/@alx"
+      ],
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Computer Vision", "Software Engineering", "Open Source"]
+    }
+    </script>
+
     <!-- Google Fonts: Archivo + Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,16 +84,19 @@
     </script>
 </head>
 <body>
+    <!-- Skip-to-content link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {{ partial "header.html" . }}
 
-    <main>
+    <main id="main-content">
         {{ block "main" . }}{{ end }}
     </main>
 
     {{ partial "footer.html" . }}
 
     <!-- Custom JS -->
-    <script src="{{ "js/main.js" | relURL }}"></script>
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
     <script src="{{ "js/analytics.js" | relURL }}" defer></script>
 </body>
 </html>

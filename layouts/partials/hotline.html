@@ -17,20 +17,20 @@
         <div class="form-field">
           <label class="form-label" for="hotline-name">Your name</label>
           <input class="form-input" type="text" id="hotline-name" name="name"
-                 placeholder="Jane Doe" autocomplete="name" data-fs-field />
+                 placeholder="Jane Doe" autocomplete="name" data-fs-field aria-required="true" />
           <span data-fs-error="name"></span>
         </div>
         <div class="form-field">
           <label class="form-label" for="hotline-email">Email</label>
           <input class="form-input" type="email" id="hotline-email" name="email"
-                 placeholder="jane@company.com" autocomplete="email" data-fs-field />
+                 placeholder="jane@company.com" autocomplete="email" data-fs-field aria-required="true" />
           <span data-fs-error="email"></span>
         </div>
         <div class="form-field">
           <label class="form-label" for="hotline-question">Your question, in two lines</label>
           <textarea class="form-textarea" id="hotline-question" name="message"
                     rows="3" placeholder="What's broken, what you've tried, what you need to decide."
-                    data-fs-field></textarea>
+                    data-fs-field aria-required="true"></textarea>
           <span data-fs-error="message"></span>
         </div>
         <button type="submit" class="form-submit" data-fs-submit-btn>
