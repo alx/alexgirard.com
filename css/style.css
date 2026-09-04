@@ -487,258 +487,6 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
 .about__resume--html:hover { color: var(--accent); }
 
 /* ============================================================
-   MENTORSHIP INTRO
-   ============================================================ */
-.mentorship-intro {
-  padding: 120px 24px 80px;
-  text-align: center;
-}
-.mentorship-intro__kicker {
-  font-family: 'Space Mono', monospace;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 22px;
-}
-.mentorship-intro__title {
-  font-size: 48px;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 900;
-  color: var(--ink);
-  margin: 0 0 26px;
-}
-.mentorship-intro__lead {
-  font-size: 19px;
-  line-height: 1.65;
-  color: var(--body);
-  margin: 0 auto;
-  max-width: 620px;
-}
-
-/* ============================================================
-   WHO I WORK WITH
-   ============================================================ */
-.who { padding: 24px 24px 80px; }
-.who__label {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--faint);
-  margin: 0 0 28px;
-}
-.who__lead {
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--body);
-  max-width: 680px;
-  margin: 0;
-}
-
-/* ============================================================
-   WHAT WE WORK ON
-   ============================================================ */
-.what {
-  background: var(--surface);
-  padding: 100px 24px;
-  border-top: 1px solid var(--hair);
-  border-bottom: 1px solid var(--hair);
-}
-.what__title {
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 800;
-  color: var(--ink);
-  margin: 0 0 12px;
-}
-.what__sub {
-  font-size: 16px;
-  color: var(--faint);
-  margin: 0 0 40px;
-}
-.what-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--grid-border);
-  border: 1px solid var(--grid-border);
-  border-radius: 6px;
-  overflow: hidden;
-}
-.what-cell {
-  background: var(--card-bg);
-  padding: 30px 26px;
-  min-height: 148px;
-}
-.what-cell--dark {
-  background: var(--ink);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.what-cell__num {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  color: var(--accent);
-  margin: 0 0 14px;
-}
-.what-cell__title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-.what-cell__text {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
-}
-.what-cell--dark .what-cell__title { color: #fff; }
-.what-cell--dark .what-cell__text  { color: #aeb6c2; margin: 0 0 16px; }
-.what-cell--dark .site-nav__hotline {
-  padding: 8px 14px;
-  font-size: 13px;
-  align-self: flex-start;
-}
-.what-cell--dark .what-cell__link  {
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 14.5px;
-}
-
-/* ============================================================
-   WHY ME
-   ============================================================ */
-.why { padding: 110px 24px; }
-.why__kicker {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin: 0 0 18px;
-}
-.why__title {
-  font-size: 34px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  font-weight: 800;
-  color: var(--ink);
-  margin: 0 0 26px;
-}
-.why__para {
-  font-size: 18px;
-  line-height: 1.7;
-  color: var(--body);
-  margin: 0 0 18px;
-}
-.why__para:last-child { margin: 0; }
-
-/* ============================================================
-   FORMATS
-   ============================================================ */
-.formats {
-  background: var(--band);
-  padding: 100px 24px;
-  border-top: 1px solid var(--hair);
-}
-.formats__title {
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 800;
-  color: var(--ink);
-  margin: 0 0 40px;
-}
-.format-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 32px;
-}
-.format-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 22px;
-  background: var(--card-bg);
-  border: 1px solid var(--grid-border);
-  border-radius: 8px;
-  padding: 24px 26px;
-}
-.format-row__meta { flex: 0 0 130px; }
-.format-row__name {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 4px;
-  letter-spacing: -0.01em;
-}
-.format-row__dur {
-  font-family: 'Space Mono', monospace;
-  font-size: 12.5px;
-  color: var(--accent);
-  margin: 0;
-}
-.format-row__desc {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
-  margin: 0;
-  flex: 1;
-}
-.formats__cal-link {
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 15px;
-}
-
-/* ============================================================
-   HOW IT WORKS
-   ============================================================ */
-.how { padding: 110px 24px; }
-.how__title {
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  font-weight: 800;
-  color: var(--ink);
-  margin: 0 0 48px;
-}
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-.how-step__num {
-  font-family: 'Space Mono', monospace;
-  font-size: 14px;
-  color: var(--accent);
-  margin: 0 0 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #e3e6ea;
-}
-.how-step__title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 10px;
-  letter-spacing: -0.01em;
-}
-.how-step__text {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* ============================================================
    HOTLINE FORM
    ============================================================ */
 .hotline {
@@ -1107,6 +855,49 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
 }
 
 /* ============================================================
+   PAGE — About / Contact / Privacy (static trust pages)
+   ============================================================ */
+.page {
+  padding: 88px 24px 100px;
+}
+.page__kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 16px;
+}
+.page__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  color: var(--ink);
+  margin: 0 0 20px;
+}
+.page__lead {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--body);
+  margin: 0 0 36px;
+}
+.page__body { font-size: 17px; line-height: 1.75; color: var(--body); }
+.page__body h3 {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 34px 0 12px;
+}
+.page__body p { margin: 0 0 18px; }
+.page__body a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.page__body a:hover { text-decoration: underline; }
+.page__body strong { color: var(--ink); font-weight: 700; }
+.page__body ul { margin: 0 0 18px; padding-left: 22px; }
+.page__body li { margin: 0 0 8px; }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .site-footer {
@@ -1161,15 +952,10 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
     display: inline-block;
   }
 
-  .who-grid     { grid-template-columns: 1fr; }
-  .what-grid    { grid-template-columns: 1fr; }
-  .how-grid     { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
 
   .hotline__inner  { grid-template-columns: 1fr; }
 
-  .format-row          { flex-direction: column; gap: 10px; }
-  .format-row__meta    { flex: none; }
 }
 
 /* ============================================================
@@ -1399,23 +1185,15 @@ input, textarea, button { font-family: 'Archivo', system-ui, sans-serif; }
     border-color: var(--grid-border);
   }
   .btn-secondary:hover { border-color: var(--ink); }
-  .what-cell,
-  .format-row,
   .hotline-card,
   .project-card,
   .audit-tier { background: var(--card-bg); }
-  .what-grid,
-  .format-row,
   .project-card,
   .hotline-card,
   .audit-tier { border-color: var(--grid-border); }
   .form-input,
   .form-textarea { background: #1a243a; border-color: #2d3852; color: var(--ink); }
   .social__link i { color: var(--accent); }
-  .what-cell--dark { background: var(--surface); }
-  .what-cell--dark .what-cell__title { color: #f0f4fa; }
-  .what-cell--dark .what-cell__text { color: var(--body); }
-  .what-cell--dark .site-nav__hotline { background: var(--accent); }
   .form-input::placeholder,
   .form-textarea::placeholder { color: var(--faint); opacity: 0.8; }
 }
