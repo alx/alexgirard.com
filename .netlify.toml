@@ -1,0 +1,33 @@
+# Netlify configuration — reference deployment for full agentic-readiness.
+#
+# The current production host is GitHub Pages (see .github/workflows/hugo.yml).
+# GitHub Pages is a pure static CDN: it cannot inspect the Accept header,
+# set Content-Type per-Accept, or add "Vary: Accept". Two of the six
+# agentic-readiness checks therefore require this host (or any host with
+# request-level logic): markdown content negotiation, and a true HTTP 301
+# for /mentorship/ (currently served as 404, which is acceptable; a 301 to
+# /#mentorship would be nicer for humans but the page was removed, so 404
+# with the agent-recovery body in static/404.html is the correct outcome).
+#
+# Migrate by:
+#   1. Push this repo to Netlify (or `netlify deploy` this built public/).
+#   2. Confirm `curl -sI https://alexgirard.com/mentorship/` returns 404
+#      (not 301) — the mentorship section was removed from the site.
+#   3. Verify markdown negotiation:
+#        curl -sI -H "Accept: text/markdown" https://alexgirard.com/about/
+#      Expected: Content-Type: text/markdown, Vary: Accept.
+#
+# The Hugo build output (public/) is deployed as the site root; the edge
+# handler below layers Accept-based markdown negotiation on top.
+
+[build]
+  command = "hugo --gc --minify --baseURL https://alexgirard.com/"
+  publish = "public"
+
+# Keep /mentorship/ as a hard 404 for non-JS agents. GitHub Pages already
+# does this via static/404.html; Netlify inherits it. (If the mentorship
+# page is ever restored as a real page, delete this and let it serve.)
+
+[[edge_handlers]]
+  path = "/*"
+  to   = "/edge-handlers/md.mjs"

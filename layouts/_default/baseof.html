@@ -11,6 +11,9 @@
     <meta name="author" content="{{ .Site.Params.author.name }}">
     {{ if .Params.robots }}<meta name="robots" content="{{ .Params.robots }}">{{ end }}
 
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
     <!-- Open Graph -->
     <meta property="og:title" content="{{ .Title | default .Site.Title }}">
     <meta property="og:description" content="{{ .Params.description | default .Site.Params.description }}">
