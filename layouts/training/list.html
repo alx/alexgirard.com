@@ -1,0 +1,55 @@
+{{ define "main" }}
+{{ $hero := .Params.hero }}
+{{ $modules := .Params.modules }}
+{{ $catalogue := site.GetPage "/training/catalogue" }}
+
+<!-- HERO — zebra 1 (white), grid: titre + aside -->
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__content">
+      <h1 class="hero__title">{{ $hero.title | safe }}</h1>
+      <p class="hero__lead">{{ $hero.lead | safe }}</p>
+      <p class="hero__sub">{{ $hero.sub }}</p>
+      <div class="hero__actions">
+        <a href="#contact" class="btn-primary">
+          <span class="pulse-dot"></span>{{ $hero.ctaPrimary }}
+        </a>
+        <a href="{{ $catalogue.RelPermalink }}" class="btn-secondary">{{ $hero.ctaSecondary }}</a>
+      </div>
+    </div>
+
+    <aside class="hero__latest">
+      <h2 class="hero__latest-title">{{ $hero.latestTitle }}</h2>
+      <ul class="latest__list">
+        {{ range $hero.latestItems }}
+        <li><strong>{{ .strong }}</strong> — {{ .text }}</li>
+        {{ end }}
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- MODULES — zebra 2 (band) -->
+<section id="modules" class="about">
+  <div class="container">
+    <h2 class="about__title">{{ $modules.title }}</h2>
+    <p class="about__para">{{ $modules.intro }}</p>
+    <div class="projects-grid">
+      {{ range $modules.cards }}
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">{{ .name }}</h3>
+          <span class="project-card__badge">{{ .badge }}</span>
+        </div>
+        <p class="project-card__desc">{{ .desc }}</p>
+      </div>
+      {{ end }}
+    </div>
+    <a href="{{ $catalogue.RelPermalink }}" class="projects__all-link">{{ $modules.link }}</a>
+  </div>
+</section>
+
+<!-- CONTACT — zebra 3 (hotline cream) -->
+{{ partial "training/contact-hotline.html" . }}
+
+{{ end }}

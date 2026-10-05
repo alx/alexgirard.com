@@ -1,25 +1,29 @@
+{{ $home := site.Home.RelPermalink }}
 <header class="site-nav">
     <div class="site-nav__inner">
         <!-- Logo -->
-        <a href="{{ .Site.BaseURL }}" class="site-nav__logo">
+        <a href="{{ $home }}" class="site-nav__logo">
             <img src="/android-chrome-192x192.png" alt="AG" width="32" height="32">
         </a>
 
         <!-- Desktop nav -->
         <nav class="site-nav__links">
-            <a href="/#about"      class="site-nav__link">About</a>
-            <a href="/#experience" class="site-nav__link">Experience</a>
-            <a href="/#projects"   class="site-nav__link">Projects</a>
-            <a href="/resume.html" class="site-nav__link">Resume</a>
-            <a href="/llms.txt"    class="site-nav__link">llms.txt</a>
-            <a href="/#hotline"    class="site-nav__hotline">
-                <span class="pulse-dot pulse-dot--sm"></span>Hotline
+            <a href="{{ $home }}#about"      class="site-nav__link">{{ i18n "nav.about" }}</a>
+            <a href="{{ $home }}#experience" class="site-nav__link">{{ i18n "nav.experience" }}</a>
+            <a href="{{ $home }}#projects"   class="site-nav__link">{{ i18n "nav.projects" }}</a>
+            <a href="/resume.html" class="site-nav__link">{{ i18n "nav.resume" }}</a>
+            <a href="/llms.txt"    class="site-nav__link">{{ i18n "nav.llms" }}</a>
+            <a href="{{ $home }}#hotline"    class="site-nav__hotline">
+                <span class="pulse-dot pulse-dot--sm"></span>{{ i18n "nav.hotline" }}
             </a>
+            {{ range first 1 site.Home.Translations }}
+            <a href="{{ .Permalink }}" class="site-nav__link site-nav__lang" title="{{ .Language.LanguageName }}">{{ .Language.Lang | upper }}</a>
+            {{ end }}
         </nav>
 
         <!-- Mobile hamburger -->
         <button type="button" id="mobile-menu-button" class="site-nav__mobile-btn" aria-expanded="false" aria-controls="mobile-menu">
-            <span class="sr-only">Open main menu</span>
+            <span class="sr-only">{{ i18n "nav.openMenu" }}</span>
             <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -28,13 +32,16 @@
 
     <!-- Mobile drawer -->
     <div id="mobile-menu" class="site-nav__mobile-menu">
-        <a href="/#about"      class="site-nav__mobile-link">About</a>
-        <a href="/#experience" class="site-nav__mobile-link">Experience</a>
-        <a href="/#projects"   class="site-nav__mobile-link">Projects</a>
-        <a href="/resume.html" class="site-nav__mobile-link">Resume</a>
-        <a href="/llms.txt"    class="site-nav__mobile-link">llms.txt</a>
-        <a href="/#hotline"    class="site-nav__mobile-hotline">
-            <span class="pulse-dot pulse-dot--sm"></span>Hotline
+        <a href="{{ $home }}#about"      class="site-nav__mobile-link">{{ i18n "nav.about" }}</a>
+        <a href="{{ $home }}#experience" class="site-nav__mobile-link">{{ i18n "nav.experience" }}</a>
+        <a href="{{ $home }}#projects"   class="site-nav__mobile-link">{{ i18n "nav.projects" }}</a>
+        <a href="/resume.html" class="site-nav__mobile-link">{{ i18n "nav.resume" }}</a>
+        <a href="/llms.txt"    class="site-nav__mobile-link">{{ i18n "nav.llms" }}</a>
+        <a href="{{ $home }}#hotline"    class="site-nav__mobile-hotline">
+            <span class="pulse-dot pulse-dot--sm"></span>{{ i18n "nav.hotline" }}
         </a>
+        {{ range first 1 site.Home.Translations }}
+        <a href="{{ .Permalink }}" class="site-nav__mobile-link site-nav__lang" title="{{ .Language.LanguageName }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
     </div>
 </header>

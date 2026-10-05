@@ -1,0 +1,20 @@
+{{ define "main" }}
+<section class="page">
+  <div class="container--narrow">
+    <p class="page__kicker">{{ i18n "train.module" }}</p>
+    <h1 class="page__title">{{ .Title }}</h1>
+    {{ if .Params.description }}
+    <p class="page__lead">{{ .Params.description }}</p>
+    {{ end }}
+    {{ if .Params.duration }}
+    <p class="page__duration">{{ i18n "cat.duration" }} : {{ .Params.duration }}</p>
+    {{ end }}
+    <div class="page__body">
+      {{ .Content }}
+    </div>
+    {{ with site.GetPage "/training/catalogue" }}
+    <p class="page__back"><a href="{{ .RelPermalink }}">← {{ i18n "train.backCatalogue" }}</a></p>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

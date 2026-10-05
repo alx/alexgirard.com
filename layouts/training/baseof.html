@@ -29,30 +29,28 @@
     <meta property="og:image" content="{{ (.Params.image | default .Site.Params.image) | absURL }}">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
+    <meta property="og:image:alt" content="{{ .Site.Params.ogImageAlt }}">
+    <meta property="og:locale" content="{{ .Site.Language.LanguageCode | replaceRE "-" "_" }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ .Title | default .Site.Title }}">
     <meta name="twitter:description" content="{{ .Params.description | default .Site.Params.description }}">
     <meta name="twitter:image" content="{{ (.Params.image | default .Site.Params.image) | absURL }}">
-    <meta property="og:locale" content="{{ .Site.Params.ogLocale }}">
+    <meta name="twitter:image:alt" content="{{ .Site.Params.ogImageAlt }}">
 
     <!-- JSON-LD Person Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "{{ .Site.Params.author.name }}",
-      "url": "{{ .Site.BaseURL }}",
-      "email": "{{ .Site.Params.author.email }}",
-      "jobTitle": "{{ i18n "schema.jobTitle" }}",
+      "@type": "Course",
+      "name": "{{ .Site.Params.courseSchemaName }}",
       "description": "{{ .Site.Params.description }}",
-      "sameAs": [
-        "https://github.com/alx",
-        "https://www.linkedin.com/in/alxgirard/",
-        "https://mastodon.tetaneutral.net/@alx"
-      ],
-      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Computer Vision", "Software Engineering", "Open Source"]
+      "provider": {
+        "@type": "Person",
+        "name": "{{ .Site.Params.author.name }}",
+        "url": "https://alexgirard.com"
+      }
     }
     </script>
 
@@ -72,14 +70,11 @@
     <!-- LLMs.txt -->
     <link rel="llms" type="text/plain" href="/llms.txt">
 
-    <!-- RSS feed -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandre Girard Davila on Mastodon" href="https://mastodon.tetaneutral.net/@alx.rss">
-
     <!-- Font Awesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <!-- Training section CSS (separate design system) -->
+    <link rel="stylesheet" href="{{ "css/training.css" | relURL }}">
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RZD56V5JTK"></script>
@@ -97,16 +92,15 @@
     <!-- Skip-to-content link for keyboard users -->
     <a href="#main-content" class="skip-link">{{ i18n "nav.skip" }}</a>
 
-    {{ partial "header.html" . }}
+    {{ partial "training/header.html" . }}
 
     <main id="main-content">
         {{ block "main" . }}{{ end }}
     </main>
 
-    {{ partial "footer.html" . }}
+    {{ partial "training/footer.html" . }}
 
     <!-- Custom JS -->
     <script src="{{ "js/main.js" | relURL }}" defer></script>
-    <script src="{{ "js/analytics.js" | relURL }}" defer></script>
 </body>
 </html>

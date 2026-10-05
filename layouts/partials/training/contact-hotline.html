@@ -1,0 +1,50 @@
+{{ $c := .Params.contact }}
+<section id="contact" class="hotline">
+  <div class="hotline__inner">
+    <div class="hotline__copy">
+      <p class="hotline__kicker">{{ $c.kicker }}</p>
+      <h2 class="hotline__title">{{ $c.title }}</h2>
+      <p class="hotline__para">{{ $c.para }}</p>
+      <p class="hotline__sub">{{ $c.sub }}</p>
+    </div>
+    <div class="hotline-card">
+      <div data-fs-success class="hotline-success">
+        <div class="hotline-success__icon">✓</div>
+        <h3 class="hotline-success__title">{{ $c.successTitle }}</h3>
+        <p class="hotline-success__text">{{ $c.successText }}</p>
+      </div>
+      <form id="contact-form">
+        <div data-fs-error class="form-error"></div>
+        <div class="form-field">
+          <label class="form-label" for="contact-name">{{ $c.labels.name }}</label>
+          <input class="form-input" type="text" id="contact-name" name="name"
+                 placeholder="{{ $c.labels.namePlaceholder }}" autocomplete="name" data-fs-field aria-required="true" />
+          <span data-fs-error="name"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="contact-email">{{ $c.labels.email }}</label>
+          <input class="form-input" type="email" id="contact-email" name="email"
+                 placeholder="{{ $c.labels.emailPlaceholder }}" autocomplete="email" data-fs-field aria-required="true" />
+          <span data-fs-error="email"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="contact-message">{{ $c.labels.message }}</label>
+          <textarea class="form-textarea" id="contact-message" name="message"
+                    rows="3" placeholder="{{ $c.labels.messagePlaceholder }}"
+                    data-fs-field aria-required="true"></textarea>
+          <span data-fs-error="message"></span>
+        </div>
+        <button type="submit" class="form-submit" data-fs-submit-btn>
+          <span class="pulse-dot"></span>{{ $c.submit }}
+        </button>
+        <p class="form-hint">{{ $c.hint }}</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'mwlvegrk' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>

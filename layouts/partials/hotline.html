@@ -1,3 +1,48 @@
+{{ if eq .Language.Lang "fr" }}
+<section id="hotline" class="hotline">
+  <div class="hotline__inner">
+    <div class="hotline__copy">
+      <p class="hotline__kicker">La hotline</p>
+      <h2 class="hotline__title">Prenons ce café.</h2>
+      <p class="hotline__para">Imaginez une discussion du matin avec un ingénieur qui a déjà fait ça en production. Une question, deux lignes, une vraie voix humaine au bout du fil.</p>
+      <p class="hotline__sub">Pas de robot de tri. Pas d'appel de découverte. Si je ne suis pas la bonne personne, je le dis et je vous oriente ailleurs.</p>
+    </div>
+    <div class="hotline-card">
+      <div data-fs-success class="hotline-success">
+        <div class="hotline-success__icon">✓</div>
+        <h3 class="hotline-success__title">Message envoyé.</h3>
+        <p class="hotline-success__text">Je lis chaque message personnellement - vous aurez une réponse d'un humain.</p>
+      </div>
+      <form id="hotline-form">
+        <div data-fs-error class="form-error"></div>
+        <div class="form-field">
+          <label class="form-label" for="hotline-name">Votre nom</label>
+          <input class="form-input" type="text" id="hotline-name" name="name"
+                 placeholder="Prénom Nom" autocomplete="name" data-fs-field aria-required="true" />
+          <span data-fs-error="name"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="hotline-email">Email</label>
+          <input class="form-input" type="email" id="hotline-email" name="email"
+                 placeholder="prenom@entreprise.fr" autocomplete="email" data-fs-field aria-required="true" />
+          <span data-fs-error="email"></span>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="hotline-question">Votre question, en deux lignes</label>
+          <textarea class="form-textarea" id="hotline-question" name="message"
+                    rows="3" placeholder="Ce qui casse, ce que vous avez essayé, la décision à prendre."
+                    data-fs-field aria-required="true"></textarea>
+          <span data-fs-error="message"></span>
+        </div>
+        <button type="submit" class="form-submit" data-fs-submit-btn>
+          <span class="pulse-dot"></span>Appeler la hotline →
+        </button>
+        <p class="form-hint">Va directement à un humain. Pas d'autorépondeur, pas de chatbot.</p>
+      </form>
+    </div>
+  </div>
+</section>
+{{ else }}
 <section id="hotline" class="hotline">
   <div class="hotline__inner">
     <div class="hotline__copy">
@@ -41,6 +86,7 @@
     </div>
   </div>
 </section>
+{{ end }}
 
 <script>
   window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };

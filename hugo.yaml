@@ -1,15 +1,38 @@
 baseURL: https://alexgirard.com/
-languageCode: en-us
-title: Alexandre Girard Davila
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+disableLanguageRedirect: true
+
+languages:
+  en:
+    languageName: English
+    languageCode: en-us
+    contentDir: content/en
+    weight: 10
+    title: Alexandre Girard Davila
+    params:
+      description: "I fix agentic AI that works in the demo and breaks in production. Twenty years shipping ML for Airbus, Cartier, SNCF, and Tate."
+      keywords: ["agentic AI", "AI production reliability", "AI debugging", "LLM agents", "computer vision", "ML engineering", "AI consultant"]
+      ogLocale: "en_US"
+      courseSchemaName: "AI production reliability consulting and training"
+  fr:
+    languageName: Français
+    languageCode: fr-fr
+    contentDir: content/fr
+    weight: 20
+    title: Alexandre Girard Davila
+    params:
+      description: "Je répare l'IA agentique qui fonctionne en démo et casse en production. Vingt ans d'expérience en ML pour Airbus, Cartier, SNCF et Tate."
+      keywords: ["IA agentique", "fiabilité IA en production", "débogage IA", "agents LLM", "vision par ordinateur", "ingénierie ML", "consultant IA"]
+      ogLocale: "fr_FR"
+      courseSchemaName: "Formation et conseil en fiabilité de l'IA en production"
 
 params:
-  description: "I fix agentic AI that works in the demo and breaks in production. Twenty years shipping ML for Airbus, Cartier, SNCF, and Tate."
-  keywords: ["agentic AI", "AI production reliability", "AI debugging", "LLM agents", "computer vision", "ML engineering", "AI consultant"]
   image: "/android-chrome-512x512.png"
   author:
     name: Alexandre Girard Davila
     email: alex@girard-davila.net
-  
+
 markup:
   goldmark:
     renderer:

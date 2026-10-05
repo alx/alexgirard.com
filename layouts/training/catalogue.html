@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<!-- HERO — zebra 1 (white) -->
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__content">
+      <h1 class="hero__title">{{ .Params.hero.title | safe }}</h1>
+      {{ if .Params.description }}
+      <p class="hero__lead">{{ .Params.description }}</p>
+      {{ end }}
+      <div class="hero__actions">
+        <a href="#m1" class="btn-primary">
+          <span class="pulse-dot"></span>{{ .Params.hero.cta }}
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero__latest">
+      <h2 class="hero__latest-title">{{ .Params.hero.asideTitle }}</h2>
+      <p class="hero__latest-note">{{ .Params.hero.asideNote }}</p>
+    </aside>
+  </div>
+</section>
+
+<!-- MODULES — zebra 2 (band) -->
+<section class="about">
+  <div class="container">
+    {{ if .Content }}
+    <div class="prose mb-8">
+      {{ .Content }}
+    </div>
+    {{ end }}
+
+    <p class="mb-8 text-sm" style="letter-spacing:.02em">
+      <strong>{{ i18n "cat.modules" }}</strong> —
+      {{ range .Pages }}<a href="#{{ .File.LogicalName | replaceRE "[.]md$" "" }}" style="color:inherit;text-decoration:underline;margin-right:1em">{{ .File.LogicalName | replaceRE "[.]md$" "" | title }}</a>{{ end }}
+    </p>
+
+    </div>
+</section>
+
+<!-- MODULES — zebra alternée blanc / band -->
+{{ range $i, $p := .Pages }}
+<section id="{{ $p.File.LogicalName | replaceRE "[.]md$" "" }}" class="catmod{{ if mod $i 2 }} catmod--band{{ end }}">
+  <div class="container">
+    <article class="prose">
+      <h2>{{ $p.Title }}</h2>
+      {{ if $p.Params.duration }}<p><em>{{ i18n "cat.duration" }} : {{ $p.Params.duration }}</em></p>{{ end }}
+      {{ $p.Content }}
+    </article>
+  </div>
+</section>
+{{ end }}
+
+{{ end }}

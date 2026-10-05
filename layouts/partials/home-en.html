@@ -1,0 +1,192 @@
+
+<!-- HERO - comfort variant -->
+<section class="hero">
+  <div class="hero__grid">
+    <div class="hero__content">
+      <h1 class="hero__title">Alexandre<br>Girard Davila</h1>
+      <p class="hero__lead">From demo-proof<br>to production-ready.</p>
+      <p class="hero__sub">Twenty years building systems that couldn't fail<br>Airbus, Cartier, SNCF, Tate</p>
+      <div class="hero__actions">
+        <a href="#hotline" class="btn-primary">
+          <span class="pulse-dot"></span>Ring the hotline
+        </a>
+        <a href="https://github.com/alx" target="_blank" rel="noopener noreferrer" class="social__link btn-secondary"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/alxgirard/" target="_blank" rel="noopener noreferrer" class="social__link btn-secondary"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      </div>
+    </div>
+
+    <aside class="hero__latest">
+      <h2 class="hero__latest-title">
+        <a href="https://mastodon.tetaneutral.net/@alx.rss" target="_blank" rel="noopener noreferrer" class="latest__rss-badge">RSS</a>
+        Curated links
+      </h2>
+      <ul class="latest__list" id="latest-list">
+        <li class="latest__loading">Loading…</li>
+      </ul>
+      <a href="https://mastodon.tetaneutral.net/@alx" target="_blank" rel="noopener noreferrer" class="latest__more"><i class="fa-brands fa-mastodon" aria-hidden="true"></i> More links →</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container--narrow">
+    <h2 class="about__title">About</h2>
+    <p class="about__para">Senior Software Engineer with over two decades of experience in full-stack development, specializing in open-source solutions and AI/ML integration. Architected and deployed enterprise-scale platforms for computer vision, edge computing, and real-time data processing serving Fortune 500 clients.</p>
+    <p class="about__para">Award-winning developer (IK Prize 2016 - Tate · Microsoft · Fabrica · Jolibrain) combining artistic vision with technical excellence in AI-powered installations. Active open-source contributor with widely-adopted tools for network visualization, computer vision, and hardware integration.</p>
+    <p class="about__meta-label">Expertise</p>
+    <p class="about__meta-text">Full-Stack Development · AI/ML Integration · Computer Vision · Open Source · System Architecture · Edge Computing · Real-time Data Processing</p>
+    <p class="about__meta-label">Technologies</p>
+    <p class="about__meta-text">React · TypeScript · JavaScript · Python · Ruby · Java · Node.js · Django · Rails · Docker · MongoDB · PostgreSQL · Redis · DeepDetect · OpenCV</p>
+    <div class="resume-links">
+      <a href="/Alex_Girard_resume.pdf" class="about__resume" target="_blank" rel="noopener noreferrer">Download resume (PDF) →</a>
+      <a href="/resume.html" class="about__resume about__resume--html" target="_blank" rel="noopener noreferrer">View resume as HTML →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOTLINE FORM -->
+{{ partial "hotline.html" . }}
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience">
+  <div class="container--narrow">
+    <h2 class="experience__title">Experience</h2>
+    <div class="experience-list">
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Independent Consultant</h3>
+        <p class="experience-item__org">Self-employed</p>
+        <p class="experience-item__when">July 2024 – Present</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Architected and deployed <a href="https://colette.chat" target="_blank" rel="noopener noreferrer">Colette</a>, a production-ready self-hosted RAG and LLM serving platform.</li>
+          <li class="experience-item__bullet">Streamlined deployment through containerization and UI optimization.</li>
+          <li class="experience-item__bullet">Leading development of enterprise-grade open-source AI infrastructure.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Senior Software Engineer</h3>
+        <p class="experience-item__org">Jolibrain</p>
+        <p class="experience-item__when">May 2018 – June 2024</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Architected React-based platform UI for the DeepDetect framework.</li>
+          <li class="experience-item__bullet">Delivered edge-computing solution for Vinci, monitoring 50+ construction sites with 99.9% uptime.</li>
+          <li class="experience-item__bullet"><a href="https://joligen.com" target="_blank" rel="noopener noreferrer">JoliGen</a> AI integration for <a href="https://rapaport.com/magazine-article/cartiers-looking-glass-is-luxurys-latest-frontier/" target="_blank" rel="noopener noreferrer">Cartier luxury retail</a>.</li>
+          <li class="experience-item__bullet">Built video metadata extraction system for railway footage and predictive maintenance.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Web Developer</h3>
+        <p class="experience-item__org">Freelance</p>
+        <p class="experience-item__when">January 2011 – April 2018</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Won IK Prize 2016 at Tate Britain for '<a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer">Recognition</a>' - comparing photojournalism with British art, with Fabrica and Microsoft.</li>
+          <li class="experience-item__bullet">Engineered Raspberry Pi fleet management for Europa Group serving international conventions.</li>
+          <li class="experience-item__bullet">Published open-source <a href="https://github.com/alx/raspi-kiosk-server" target="_blank" rel="noopener noreferrer">raspi-kiosk-server</a>, adopted for digital signage.</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3 class="experience-item__role">Senior Ruby Developer</h3>
+        <p class="experience-item__org">Legodata</p>
+        <p class="experience-item__when">January 2009 – January 2011</p>
+        <ul class="experience-item__bullets">
+          <li class="experience-item__bullet">Developed platform managing cultural events with Letsmotiv magazine.</li>
+          <li class="experience-item__bullet">Designed scalable architecture for event data management and publication.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="resume-links">
+      <a href="/Alex_Girard_resume.pdf" class="experience__resume" target="_blank" rel="noopener noreferrer">Download Resume (PDF) →</a>
+      <a href="/resume.html" class="experience__resume experience__resume--html" target="_blank" rel="noopener noreferrer">View resume as HTML →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="projects__title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Colette</h3>
+          <span class="project-card__badge">⭐ New</span>
+        </div>
+        <p class="project-card__desc">Production-ready self-hosted RAG and LLM serving platform for enterprise AI infrastructure.</p>
+        <p class="project-card__tags">Python · AI/ML · RAG · LLM</p>
+        <a href="https://colette.chat" target="_blank" rel="noopener noreferrer" class="project-card__link">Visit Colette →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Recognition</h3>
+          <span class="project-card__badge">🏆 IK Prize</span>
+        </div>
+        <p class="project-card__desc">IK Prize 2016 winner at Tate Britain - AI-powered installation comparing photojournalism with British art. With Tate, Microsoft, Fabrica.</p>
+        <p class="project-card__tags">Computer Vision · Installation · AI</p>
+        <a href="https://github.com/jolibrain/recognition" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">JoliGen</h3>
+          <span class="project-card__badge">⭐ Featured</span>
+        </div>
+        <p class="project-card__desc">AI-powered generative art platform used by Cartier for luxury retail experiences.</p>
+        <p class="project-card__tags">AI · Generative Art · Enterprise</p>
+        <a href="https://joligen.com" target="_blank" rel="noopener noreferrer" class="project-card__link">Visit JoliGen →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">Parasol</h3>
+          <span class="project-card__badge">⭐ 64</span>
+        </div>
+        <p class="project-card__desc">A network graph exploration tool for visualizing and analyzing complex data relationships.</p>
+        <p class="project-card__tags">JavaScript · Data Viz · Networks</p>
+        <a href="https://github.com/alx/parasol" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">React Bounding Box</h3>
+          <span class="project-card__badge">⭐ 50</span>
+        </div>
+        <p class="project-card__desc">HTML Canvas library to display bounding boxes on images with React, for computer vision.</p>
+        <p class="project-card__tags">JavaScript · React · Canvas</p>
+        <a href="https://github.com/alx/react-bounding-box" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__header">
+          <h3 class="project-card__name">DeepDetect JS</h3>
+          <span class="project-card__badge">⭐ 8</span>
+        </div>
+        <p class="project-card__desc">JavaScript client library for the DeepDetect deep-learning server, for easy AI model integration.</p>
+        <p class="project-card__tags">JavaScript · Deep Learning · API</p>
+        <a href="https://github.com/jolibrain/deepdetect-js" target="_blank" rel="noopener noreferrer" class="project-card__link">View on GitHub →</a>
+      </div>
+
+    </div>
+    <a href="https://github.com/alx?tab=repositories" target="_blank" rel="noopener noreferrer" class="projects__all-link">View all projects on GitHub →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container--narrow" style="max-width:600px;">
+    <h2 class="contact__title">Get in touch</h2>
+    <p class="contact__sub">Prefer the slow lane? Drop me a line - or ring the hotline above for something quicker.</p>
+    <a href="mailto:alex@girard-davila.net" class="contact__email">alex@girard-davila.net</a>
+    <div class="contact__social">
+      <a href="https://github.com/alx" target="_blank" rel="noopener noreferrer" class="contact__social-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/alxgirard/" target="_blank" rel="noopener noreferrer" class="contact__social-link">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
