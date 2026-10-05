@@ -4,7 +4,7 @@
 <section class="hero">
   <div class="hero__grid">
     <div class="hero__content">
-      <h1 class="hero__title">{{ .Params.hero.title | safe }}</h1>
+      <h1 class="hero__title">{{ .Params.hero.title | safeHTML }}</h1>
       {{ if .Params.description }}
       <p class="hero__lead">{{ .Params.description }}</p>
       {{ end }}
