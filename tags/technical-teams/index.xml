@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technical Teams on Alexandre Girard Davila</title><link>https://alexgirard.com/tags/technical-teams/</link><description>Recent content in Technical Teams on Alexandre Girard Davila</description><generator>Hugo</generator><language>en-us</language><managingEditor>alex@girard-davila.net (Alexandre Girard Davila)</managingEditor><webMaster>alex@girard-davila.net (Alexandre Girard Davila)</webMaster><atom:link href="https://alexgirard.com/tags/technical-teams/index.xml" rel="self" type="application/rss+xml"/><item><title>M3 — Autonomous pipeline: ralph, beads &amp; sub-agents</title><link>https://alexgirard.com/training/catalogue/m3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m3/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: understand and reproduce an agent-assisted development
+pipeline: an issue base (beads) as the source of truth, an iterative
+loop that works by itself (ralph), and specialized sub-agents that
+check each other (worker, tester, reviewer, independent verifier).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: developers, DevOps, data engineers, tech leads.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: comfort with the terminal, git, and a scripting
+language (Python); having taken M2 (strongly recommended).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Content anchored in the real thing&lt;/strong&gt;: teardown of an unsupervised
+night run (automatic task selection, ~5 h of execution, end-of-night
+report) and of a multi-sub-agent harness with cross-model
+verification.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;the participant has &lt;strong&gt;run their own autonomous loop&lt;/strong&gt; on a small
+repository (10+ iterations, zero intervention);&lt;/li&gt;
+&lt;li&gt;their issue base is initialized and synced (2+ issues closed by the
+end of the workshop);&lt;/li&gt;
+&lt;li&gt;an &amp;ldquo;agent rules&amp;rdquo; document (what it may / may not do alone — e.g.
+never commit/push without human validation).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

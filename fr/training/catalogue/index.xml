@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Catalogue des cours on Alexandre Girard Davila</title><link>https://alexgirard.com/fr/training/catalogue/</link><description>Recent content in Catalogue des cours on Alexandre Girard Davila</description><generator>Hugo</generator><language>fr-fr</language><managingEditor>alex@girard-davila.net (Alexandre Girard Davila)</managingEditor><webMaster>alex@girard-davila.net (Alexandre Girard Davila)</webMaster><atom:link href="https://alexgirard.com/fr/training/catalogue/index.xml" rel="self" type="application/rss+xml"/><item><title>M1 — Fondamentaux des agents IA</title><link>https://alexgirard.com/fr/training/catalogue/m1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m1/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : comprendre ce qu&amp;rsquo;un agent IA fait réellement (planifier,
+appeler des outils, itérer jusqu&amp;rsquo;à validation) et où il échoue ;
+distinguer chatbot, outil assisté et agent autonome ; choisir le bon
+niveau d&amp;rsquo;automation pour un cas d&amp;rsquo;usage donné.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : managers, chefs de projet, décideurs ; aucun pré-requis
+technique (les démos sont live, pas en vidéo).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : un ordinateur portable pour la partie « mains dans le
+beurre » (30 min de manipulation guidée).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;chaque participant part avec &lt;strong&gt;3 automatisations candidates&lt;/strong&gt;
+identifiées dans ses propres flux (fiche « cas d&amp;rsquo;usage » fournie) ;&lt;/li&gt;
+&lt;li&gt;test de compréhension court (QCM 10 questions) — objectif ≥ 8/10 ;&lt;/li&gt;
+&lt;li&gt;décision argumentée : « on en parle » vs. « on passe au M2/M3 ».&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M2 — Automatiser son quotidien avec des agents IA</title><link>https://alexgirard.com/fr/training/catalogue/m2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m2/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : mettre en place un agent sur &lt;strong&gt;vos&lt;/strong&gt; tâches réelles
+(rédaction, synthèse de documents, traitement de données, e-mails de
+reporting) ; apprendre à écrire de bonnes consignes et à vérifier les
+sorties ; savoir quand l&amp;rsquo;agent doit s&amp;rsquo;arrêter et demander l&amp;rsquo;avis humain.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : équipes opérationnelles (administratif, technique,
+commercial) ; à l&amp;rsquo;aise avec l&amp;rsquo;informatique de bureau.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : avoir suivi M1 &lt;strong&gt;ou&lt;/strong&gt; être déjà utilisateur actif
+d&amp;rsquo;outils IA ; un cas d&amp;rsquo;usage concret apporté par le participant.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1 workflow automatisé et testé&lt;/strong&gt; par binôme, réplicable chez eux
+(script + instructions écrites) ;&lt;/li&gt;
+&lt;li&gt;grille « confiance » : pour quel type de sortie l&amp;rsquo;agent peut agir
+seul, pour quel type non — validée par retour d&amp;rsquo;expérience le
+jour même ;&lt;/li&gt;
+&lt;li&gt;mesure simple avant/après sur le cas d&amp;rsquo;usage choisi (temps de
+traitement estimé vs. mesuré en session).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M3 — Pipeline autonome : ralph, beads &amp; sous-agents</title><link>https://alexgirard.com/fr/training/catalogue/m3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m3/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : comprendre et reproduire un pipeline de développement
+assisté par agents : une base d&amp;rsquo;issues (beads) comme source de vérité,
+une boucle itérative qui travaille seule (ralph), et des sous-agents
+spécialisés qui se contrôlent mutuellement (worker, tester, reviewer,
+vérificateur indépendant).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : développeurs, DevOps, data engineers, tech leads.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : confort avec le terminal, git, et un langage de
+script (Python) ; avoir suivi M2 (fortement recommandé).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contenu ancré dans du réel&lt;/strong&gt; : démontage d&amp;rsquo;un run nocturne non
+supervisé (sélection automatique des tâches, ~5 h d&amp;rsquo;exécution, rapport
+de fin de nuit) et d&amp;rsquo;un harness multi-sous-agents avec vérification
+croisée inter-modèles.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;le participant a fait &lt;strong&gt;tourner sa propre boucle autonome&lt;/strong&gt; sur un
+petit dépôt (10+ itérations, zéro intervention) ;&lt;/li&gt;
+&lt;li&gt;sa base d&amp;rsquo;issues est initialisée et synchronisée (2+ issues
+closes en fin de stage) ;&lt;/li&gt;
+&lt;li&gt;document « règles de l&amp;rsquo;agent » (ce qu&amp;rsquo;il peut / ne peut pas faire seul —
+p. ex. jamais de commit/push sans validation humaine).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M4 — LLM &amp; génération d'images locale sur GPU</title><link>https://alexgirard.com/fr/training/catalogue/m4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m4/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : faire tourner un LLM sur une carte 12–24 GB (llama.cpp
+et dérivés), comprendre quantification, contexte et débit (tok/s), et
+en faire un service local avec API compatible OpenAI ; générer des
+images avec Stable Diffusion en gardant le contrôle (LoRA,
+post-traitement) — avec, si le temps le permet, un pipeline
+d&amp;rsquo;identité qui conserve un visage d&amp;rsquo;une photo dans l&amp;rsquo;image générée.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : ingénieurs ML/IA, data scientists, équipes infra qui ont
+du matériel (ou qui savent dimensionner) et des contraintes de
+confidentialité.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : Linux de base, Docker, un GPU NVIDIA (ou accès à une machine distante ; le stage
+peut se faire sur du matériel fourni).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;un serveur LLM local mesuré (débit tok/s et contexte retenus
+&lt;strong&gt;chiffrés dans le compte-rendu de la session&lt;/strong&gt; — on apprend à mesurer, pas
+à croire les benchmarks des autres) ;&lt;/li&gt;
+&lt;li&gt;une image générée en pipeline local + un script reproductible ;&lt;/li&gt;
+&lt;li&gt;dimensionnement écrit : quel GPU, quelle quantification, quel modèle
+pour leur cas (document reparté par binôme).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M5 — Audit d'agentisation &amp; feuille de route</title><link>https://alexgirard.com/fr/training/catalogue/m5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m5/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : cartographier les flux de travail de l&amp;rsquo;entreprise,
+scorer ce qui est automatisable &lt;strong&gt;maintenant&lt;/strong&gt; avec les outils
+agents (et ce qui ne l&amp;rsquo;est pas), chiffrer le gain par flux, et produire
+une feuille de route priorisée que la direction peut exécuter sans
+moi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : direction + 3 à 6 personnes clés ; l&amp;rsquo;audit est fait
+&lt;strong&gt;dans&lt;/strong&gt; l&amp;rsquo;entreprise, sur ses données de travail (anonymisées si
+besoin).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : accès à 2 à 3 personnes par service concerné pour
+des entretiens de 1 h.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cartographie des flux&lt;/strong&gt; (10–25 flux couverts, score de
+maturité 0–4 chacun) ;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;feuille de route priorisée&lt;/strong&gt; : top 5 des automatisations avec
+estimation du gain (heures/semaine) et du risque, séquencée sur
+6 mois ;&lt;/li&gt;
+&lt;li&gt;recommandation stack (local vs. hybride) avec justification
+coûts/risques — écrite pour être lue par le comité de direction.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

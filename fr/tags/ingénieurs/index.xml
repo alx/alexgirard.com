@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ingénieurs on Alexandre Girard Davila</title><link>https://alexgirard.com/fr/tags/ing%C3%A9nieurs/</link><description>Recent content in Ingénieurs on Alexandre Girard Davila</description><generator>Hugo</generator><language>fr-fr</language><managingEditor>alex@girard-davila.net (Alexandre Girard Davila)</managingEditor><webMaster>alex@girard-davila.net (Alexandre Girard Davila)</webMaster><atom:link href="https://alexgirard.com/fr/tags/ing%C3%A9nieurs/index.xml" rel="self" type="application/rss+xml"/><item><title>M4 — LLM &amp; génération d'images locale sur GPU</title><link>https://alexgirard.com/fr/training/catalogue/m4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m4/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : faire tourner un LLM sur une carte 12–24 GB (llama.cpp
+et dérivés), comprendre quantification, contexte et débit (tok/s), et
+en faire un service local avec API compatible OpenAI ; générer des
+images avec Stable Diffusion en gardant le contrôle (LoRA,
+post-traitement) — avec, si le temps le permet, un pipeline
+d&amp;rsquo;identité qui conserve un visage d&amp;rsquo;une photo dans l&amp;rsquo;image générée.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : ingénieurs ML/IA, data scientists, équipes infra qui ont
+du matériel (ou qui savent dimensionner) et des contraintes de
+confidentialité.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : Linux de base, Docker, un GPU NVIDIA (ou accès à une machine distante ; le stage
+peut se faire sur du matériel fourni).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;un serveur LLM local mesuré (débit tok/s et contexte retenus
+&lt;strong&gt;chiffrés dans le compte-rendu de la session&lt;/strong&gt; — on apprend à mesurer, pas
+à croire les benchmarks des autres) ;&lt;/li&gt;
+&lt;li&gt;une image générée en pipeline local + un script reproductible ;&lt;/li&gt;
+&lt;li&gt;dimensionnement écrit : quel GPU, quelle quantification, quel modèle
+pour leur cas (document reparté par binôme).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Course catalogue on Alexandre Girard Davila</title><link>https://alexgirard.com/training/catalogue/</link><description>Recent content in Course catalogue on Alexandre Girard Davila</description><generator>Hugo</generator><language>en-us</language><managingEditor>alex@girard-davila.net (Alexandre Girard Davila)</managingEditor><webMaster>alex@girard-davila.net (Alexandre Girard Davila)</webMaster><atom:link href="https://alexgirard.com/training/catalogue/index.xml" rel="self" type="application/rss+xml"/><item><title>M1 — AI agent fundamentals</title><link>https://alexgirard.com/training/catalogue/m1/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m1/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: understand what an AI agent actually does (plan, call
+tools, iterate until validated) and where it fails; distinguish
+chatbot, assisted tool and autonomous agent; choose the right level of
+automation for a given use case.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: managers, project leads, decision makers; no technical
+prerequisites (demos are live, not video).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: a laptop for the hands-on part (30 min of guided
+practice).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;every participant leaves with &lt;strong&gt;3 candidate automations&lt;/strong&gt; identified
+in their own workflows (use-case sheet provided);&lt;/li&gt;
+&lt;li&gt;short comprehension test (10-question quiz) — target ≥ 8/10;&lt;/li&gt;
+&lt;li&gt;an argued decision: &amp;ldquo;let&amp;rsquo;s talk it over&amp;rdquo; vs. &amp;ldquo;let&amp;rsquo;s move to M2/M3&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M2 — Automating your daily work with AI agents</title><link>https://alexgirard.com/training/catalogue/m2/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m2/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: set up an agent on &lt;strong&gt;your&lt;/strong&gt; real tasks (writing,
+document summarization, data processing, reporting e-mails); learn to
+write good instructions and verify outputs; know when the agent should
+stop and ask for a human opinion.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: operational teams (administrative, technical,
+commercial); comfortable with office computing.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: having taken M1 &lt;strong&gt;or&lt;/strong&gt; already an active user of
+AI tools; a concrete use case brought by the participant.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;1 automated and tested workflow&lt;/strong&gt; per pair, replicable at their
+place (script + written instructions);&lt;/li&gt;
+&lt;li&gt;a &amp;ldquo;trust&amp;rdquo; grid: for which type of output the agent may act alone,
+for which not — validated the same day from field feedback;&lt;/li&gt;
+&lt;li&gt;a simple before/after measurement on the chosen use case (estimated
+processing time vs. time measured in session).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M3 — Autonomous pipeline: ralph, beads &amp; sub-agents</title><link>https://alexgirard.com/training/catalogue/m3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m3/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: understand and reproduce an agent-assisted development
+pipeline: an issue base (beads) as the source of truth, an iterative
+loop that works by itself (ralph), and specialized sub-agents that
+check each other (worker, tester, reviewer, independent verifier).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: developers, DevOps, data engineers, tech leads.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: comfort with the terminal, git, and a scripting
+language (Python); having taken M2 (strongly recommended).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Content anchored in the real thing&lt;/strong&gt;: teardown of an unsupervised
+night run (automatic task selection, ~5 h of execution, end-of-night
+report) and of a multi-sub-agent harness with cross-model
+verification.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;the participant has &lt;strong&gt;run their own autonomous loop&lt;/strong&gt; on a small
+repository (10+ iterations, zero intervention);&lt;/li&gt;
+&lt;li&gt;their issue base is initialized and synced (2+ issues closed by the
+end of the workshop);&lt;/li&gt;
+&lt;li&gt;an &amp;ldquo;agent rules&amp;rdquo; document (what it may / may not do alone — e.g.
+never commit/push without human validation).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M4 — Local LLMs &amp; image generation on GPU</title><link>https://alexgirard.com/training/catalogue/m4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m4/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: run an LLM on a 12–24 GB card (llama.cpp and
+derivatives), understand quantization, context and throughput (tok/s),
+and turn it into a local service with an OpenAI-compatible API;
+generate images with Stable Diffusion while keeping control (LoRA,
+post-processing) — and, if time allows, an identity pipeline that
+keeps a face from a photo in the generated image.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: ML/AI engineers, data scientists, infra teams who have
+hardware (or know how to size it) and confidentiality constraints.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: basic Linux, Docker, an NVIDIA GPU (or access to a
+remote machine; the workshop can run on provided hardware).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;a measured local LLM server (tok/s throughput and retained context
+&lt;strong&gt;written in the session report&lt;/strong&gt; — we learn to measure, not to
+trust other people&amp;rsquo;s benchmarks);&lt;/li&gt;
+&lt;li&gt;a locally generated image + a reproducible script;&lt;/li&gt;
+&lt;li&gt;a written sizing: which GPU, which quantization, which model for
+their case (document taken home per pair).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>M5 — Agentization audit &amp; roadmap</title><link>https://alexgirard.com/training/catalogue/m5/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/training/catalogue/m5/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectives&lt;/strong&gt;: map the company&amp;rsquo;s workflows, score what can be
+automated &lt;strong&gt;now&lt;/strong&gt; with agent tools (and what cannot), quantify the
+gain per workflow, and produce a prioritized roadmap leadership can
+execute without me.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Audience&lt;/strong&gt;: executives + 3 to 6 key people; the audit is done
+&lt;strong&gt;inside&lt;/strong&gt; the company, on its working data (anonymized if needed).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Prerequisites&lt;/strong&gt;: access to 2 to 3 people per service involved for
+1-hour interviews.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deliverables / measurable outcomes&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;workflow map&lt;/strong&gt; (10–25 workflows covered, maturity score 0–4 for
+each);&lt;/li&gt;
+&lt;li&gt;a &lt;strong&gt;prioritized roadmap&lt;/strong&gt;: top 5 automations with estimated gain
+(hours/week) and risk, sequenced over 6 months;&lt;/li&gt;
+&lt;li&gt;a stack recommendation (local vs. hybrid) with
+cost/risk justification — written to be read by the executive
+committee.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

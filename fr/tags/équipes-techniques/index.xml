@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Équipes Techniques on Alexandre Girard Davila</title><link>https://alexgirard.com/fr/tags/%C3%A9quipes-techniques/</link><description>Recent content in Équipes Techniques on Alexandre Girard Davila</description><generator>Hugo</generator><language>fr-fr</language><managingEditor>alex@girard-davila.net (Alexandre Girard Davila)</managingEditor><webMaster>alex@girard-davila.net (Alexandre Girard Davila)</webMaster><atom:link href="https://alexgirard.com/fr/tags/%C3%A9quipes-techniques/index.xml" rel="self" type="application/rss+xml"/><item><title>M3 — Pipeline autonome : ralph, beads &amp; sous-agents</title><link>https://alexgirard.com/fr/training/catalogue/m3/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>alex@girard-davila.net (Alexandre Girard Davila)</author><guid>https://alexgirard.com/fr/training/catalogue/m3/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Objectifs&lt;/strong&gt; : comprendre et reproduire un pipeline de développement
+assisté par agents : une base d&amp;rsquo;issues (beads) comme source de vérité,
+une boucle itérative qui travaille seule (ralph), et des sous-agents
+spécialisés qui se contrôlent mutuellement (worker, tester, reviewer,
+vérificateur indépendant).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Public&lt;/strong&gt; : développeurs, DevOps, data engineers, tech leads.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pré-requis&lt;/strong&gt; : confort avec le terminal, git, et un langage de
+script (Python) ; avoir suivi M2 (fortement recommandé).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Contenu ancré dans du réel&lt;/strong&gt; : démontage d&amp;rsquo;un run nocturne non
+supervisé (sélection automatique des tâches, ~5 h d&amp;rsquo;exécution, rapport
+de fin de nuit) et d&amp;rsquo;un harness multi-sous-agents avec vérification
+croisée inter-modèles.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Livrables / résultats mesurables&lt;/strong&gt; :
+&lt;ul&gt;
+&lt;li&gt;le participant a fait &lt;strong&gt;tourner sa propre boucle autonome&lt;/strong&gt; sur un
+petit dépôt (10+ itérations, zéro intervention) ;&lt;/li&gt;
+&lt;li&gt;sa base d&amp;rsquo;issues est initialisée et synchronisée (2+ issues
+closes en fin de stage) ;&lt;/li&gt;
+&lt;li&gt;document « règles de l&amp;rsquo;agent » (ce qu&amp;rsquo;il peut / ne peut pas faire seul —
+p. ex. jamais de commit/push sans validation humaine).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
