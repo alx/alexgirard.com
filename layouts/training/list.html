@@ -22,7 +22,7 @@
       <h2 class="hero__latest-title">{{ $hero.latestTitle }}</h2>
       <ul class="latest__list">
         {{ range $hero.latestItems }}
-        <li><strong>{{ .strong }}</strong> — {{ .text }}</li>
+        <li><strong>{{ .strong }}</strong>: {{ .text }}</li>
         {{ end }}
       </ul>
     </aside>
@@ -45,7 +45,7 @@
       {{ end }}
     </ul>
 
-    <details class="agent__proof">
+    <details class="agent__proof" open>
       <summary>{{ $ag.proofSummary }}</summary>
       <div class="agent__proof-body">
         <h3 class="agent__h3">{{ $ag.proofHeading }}</h3>
