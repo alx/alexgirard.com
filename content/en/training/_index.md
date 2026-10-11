@@ -35,15 +35,9 @@ params:
     proofSteps:
       - "curl -fsSL https://pi.dev/install.sh | sh"
       - "pi install git:github.com/alx/pi-provider-gd"
-      - "pi  →  /login gd   (GitHub sign-in at api.girard-davila.net — key stored automatically)"
-      - "/model gd   → pick a model, e.g. gd/Qwen3.8-27B-i1-IQ4_XS-GGUF-Smaller or gd/deepseek-v4.1-flash"
-      - "say “test” — the agent replies"
-    proofMermaid: |-
-      flowchart TD
-        A["curl -fsSL https://pi.dev/install.sh | sh"] --> B["pi install git:github.com/alx/pi-provider-gd"]
-        B --> C["/login gd — GitHub sign-in (api.girard-davila.net)"]
-        C --> D["/model gd — pick a model"]
-        D --> E["say “test” — the agent replies"]
+      - "pi -> /login gd # GitHub sign-in at api.girard-davila.net — key stored automatically"
+      - "/model gd # pick a model, e.g. gd/Qwen3.8-27B-i1-IQ4_XS-GGUF-Smaller or gd/deepseek-v4.1-flash"
+      - "say \"test\" # the agent replies"
     accessTitle: "For your agents, on the model side"
     accessText: "Two options: your own deepinfra key (bring-your-own), or an api.girard-davila.net account — key generated in a few clicks, credits included in beta. One-command connect via pi-provider-gd."
     cta: "Book the scoping call"

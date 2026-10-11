@@ -51,17 +51,17 @@
         <h3 class="agent__h3">{{ $ag.proofHeading }}</h3>
         <p>{{ $ag.proofIntro | markdownify }}</p>
 
-        {{ with $ag.proofMermaid }}<pre class="mermaid">{{ . }}</pre>{{ end }}
-
         <ol class="agent__steps">
           {{ range $ag.proofSteps }}
-          <li><code>{{ . }}</code></li>
+          {{ $parts := split . " # " }}
+          <li>
+            <code>{{ index $parts 0 }}</code>
+            {{ if ge (len $parts) 2 }}<span class="agent__cmt"># {{ index $parts 1 }}</span>{{ end }}
+          </li>
           {{ end }}
         </ol>
       </div>
     </details>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({ startOnLoad: true });</script>
 
     <div class="agent__access">
       <h3 class="agent__h3">{{ $ag.accessTitle }}</h3>

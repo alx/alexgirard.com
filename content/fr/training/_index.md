@@ -35,15 +35,9 @@ params:
     proofSteps:
       - "curl -fsSL https://pi.dev/install.sh | sh"
       - "pi install git:github.com/alx/pi-provider-gd"
-      - "pi  →  /login gd   (connexion GitHub sur api.girard-davila.net — la clé est stockée automatiquement)"
-      - "/model gd   → choisir un modèle, ex. gd/Qwen3.8-27B-i1-IQ4_XS-GGUF-Smaller ou gd/deepseek-v4.1-flash"
-      - "dire « test » — l'agent répond"
-    proofMermaid: |-
-      flowchart TD
-        A["curl -fsSL https://pi.dev/install.sh | sh"] --> B["pi install git:github.com/alx/pi-provider-gd"]
-        B --> C["/login gd — connexion GitHub (api.girard-davila.net)"]
-        C --> D["/model gd — choisir un modèle"]
-        D --> E["dire « test » — l'agent répond"]
+      - "pi -> /login gd # connexion GitHub sur api.girard-davila.net — la clé est stockée automatiquement"
+      - "/model gd # choisir un modèle, ex. gd/Qwen3.8-27B-i1-IQ4_XS-GGUF-Smaller ou gd/deepseek-v4.1-flash"
+      - "say \"test\" # l'agent répond"
     accessTitle: "Pour vos agents, côté modèle"
     accessText: "Deux options : une clé deepinfra à vous (bring-your-own), ou un compte api.girard-davila.net — clé générée en quelques clics, crédits offerts en bêta. Connexion en une commande via pi-provider-gd."
     cta: "Planifier l'appel de cadrage"
