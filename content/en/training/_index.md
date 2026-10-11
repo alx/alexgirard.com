@@ -29,7 +29,7 @@ params:
       - "The pi.dev harness deployed on your machines — Windows and Linux alike."
       - "The LLM of your choice: a hosted model via api.girard-davila.net, or your own deepinfra key."
       - "Safe automation: cron, monitoring, alerts, metrics before anything ships."
-    proofSummary: "Deployment proof — 2 Windows machines + deepseek-v4.1-flash (already done at a client)"
+    proofSummary: "Deployment proof: Windows computer + deepseek-v4.1-flash (already deployed at a client)"
     proofHeading: "The step-by-step deployment"
     proofIntro: "With its own deepinfra key, an agent reaches DeepSeek v4.1 flash in a few commands:"
     proofSteps:
