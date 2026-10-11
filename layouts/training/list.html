@@ -29,6 +29,45 @@
   </div>
 </section>
 
+<!-- AGENTISATION — pi.dev in your pipeline (between hero & modules) -->
+{{ $ag := .Params.agentisation }}
+{{ if $ag }}
+<section id="agentisation" class="agent">
+  <div class="container">
+    <p class="agent__kicker">{{ $ag.kicker }}</p>
+    <h2 class="agent__title">{{ $ag.title }}</h2>
+    <p class="agent__lead">{{ $ag.lead | safeHTML }}</p>
+
+    <h3 class="agent__h3">{{ $ag.pointsTitle }}</h3>
+    <ul class="agent__points">
+      {{ range $ag.points }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+
+    <details class="agent__proof">
+      <summary>{{ $ag.proofSummary }}</summary>
+      <div class="agent__proof-body">
+        <h3 class="agent__h3">{{ $ag.proofHeading }}</h3>
+        <p>{{ $ag.proofIntro }}</p>
+        <ol class="agent__steps">
+          {{ range $ag.proofSteps }}
+          <li><code>{{ . }}</code></li>
+          {{ end }}
+        </ol>
+      </div>
+    </details>
+
+    <div class="agent__access">
+      <h3 class="agent__h3">{{ $ag.accessTitle }}</h3>
+      <p>{{ $ag.accessText }}</p>
+    </div>
+
+    <a href="#contact" class="btn-primary"><span class="pulse-dot"></span>{{ $ag.cta }}</a>
+  </div>
+</section>
+{{ end }}
+
 <!-- MODULES — zebra 2 (band) -->
 <section id="modules" class="about">
   <div class="container">

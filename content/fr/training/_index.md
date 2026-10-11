@@ -20,6 +20,27 @@ params:
         text: "des métriques avant d'automatiser, jamais après."
       - strong: "Automatiser en sécurité"
         text: "cron, supervision, alertes : ça tourne la nuit, sans vous."
+  agentisation:
+    kicker: "La brique concrète"
+    title: "Des agents IA dans votre pipeline"
+    lead: "Un <strong>agent pi.dev</strong> (l'outillage agent open source que j'utilise au quotidien) installé dans votre environnement, branché sur vos données, qui tourne seul la nuit."
+    pointsTitle: "Ce que je mets en place chez vous"
+    points:
+      - "Le harness pi.dev déployé sur vos machines — Windows comme Linux."
+      - "Le LLM de votre choix : modèle hébergé via api.girard-davila.net, ou votre propre clé deepinfra."
+      - "Automatisation en sécurité : cron, supervision, alertes, métriques avant toute mise en production."
+    proofSummary: "Preuve de déploiement — 2 postes Windows + deepseek-v4.1-flash (déjà réalisé chez un client)"
+    proofHeading: "Le déploiement pas à pas"
+    proofIntro: "Avec sa propre clé deepinfra, un agent accède au modèle DeepSeek v4.1 flash en quelques commandes :"
+    proofSteps:
+      - "curl -fsSL https://pi.dev/install.sh | sh"
+      - "pi install npm:pi-deepinfra"
+      - "pi  →  /login deepinfra  →  https://deepinfra.com/dash/api_keys"
+      - "/model deepinfra 4.1   (sélectionner DeepSeek 4.1 flash)"
+      - "dire « test » : avec ~10 € de crédit sur deepinfra, l'agent répond « test » ; sinon, recharger le crédit."
+    accessTitle: "Pour vos agents, côté modèle"
+    accessText: "Deux options : une clé deepinfra à vous (bring-your-own), ou un compte api.girard-davila.net — clé générée en quelques clics, crédits offerts en bêta. Connexion en une commande via pi-provider-gd."
+    cta: "Planifier l'appel de cadrage"
   modules:
     title: "Modules"
     intro: "Cinq modules de formation, chacun autonome ou combinable en parcours. Chaque module part d'une démo live, pas d'un diaporama."

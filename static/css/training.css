@@ -1358,3 +1358,145 @@ a.hover\:text-blue-800:hover { color: #1e40af; }
 .page__back { margin-top: 28px; }
 .page__back a { color: var(--accent); text-decoration: none; font-weight: 600; }
 .page__back a:hover { text-decoration: underline; }
+
+/* ============================================================
+   AGENTISATION — pi.dev in your pipeline (hero <-> modules)
+   ============================================================ */
+.agent {
+  background: var(--accent-tint);
+  padding: 110px 24px;
+  border-top: 1px solid var(--accent-tint-bd);
+}
+.agent__kicker {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+.agent__title {
+  font-size: 40px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 22px;
+}
+.agent__lead {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--body);
+  max-width: 760px;
+  margin: 0 0 34px;
+}
+.agent__h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 14px;
+}
+.agent__points {
+  list-style: none;
+  margin: 0 0 30px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  max-width: 780px;
+}
+.agent__points li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--body);
+  line-height: 1.6;
+  font-size: 16px;
+}
+.agent__points li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+.agent__proof {
+  border: 1px solid var(--accent-tint-bd);
+  background: var(--surface);
+  border-radius: 10px;
+  margin: 0 0 30px;
+  max-width: 800px;
+}
+.agent__proof summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: var(--ink);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.agent__proof summary::-webkit-details-marker { display: none; }
+.agent__proof summary::after {
+  content: "\002B";
+  font-size: 20px;
+  color: var(--accent);
+  flex: none;
+}
+.agent__proof[open] summary::after { content: "\2013"; }
+.agent__proof-body {
+  border-top: 1px solid var(--hair);
+  padding: 16px 20px 20px;
+}
+.agent__proof-body p { color: var(--body); line-height: 1.6; font-size: 15.5px; }
+.agent__steps {
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: agent;
+  display: grid;
+  gap: 8px;
+}
+.agent__steps li {
+  counter-increment: agent;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--body);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+.agent__steps li::before {
+  content: counter(agent);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-tint-bd);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin-top: 1px;
+}
+.agent__steps code {
+  font-family: 'Space Mono', monospace;
+  font-size: 13.5px;
+  background: var(--band);
+  border: 1px solid var(--hair);
+  border-radius: 6px;
+  padding: 2px 8px;
+  white-space: normal;
+  word-break: break-word;
+}
+.agent__access { margin: 0 0 28px; max-width: 780px; }
+.agent__access p { color: var(--body); line-height: 1.6; font-size: 15.5px; margin: 0; }
+@media (max-width: 720px) {
+  .agent { padding: 72px 24px; }
+  .agent__title { font-size: 32px; }
+}

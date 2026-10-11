@@ -20,6 +20,27 @@ params:
         text: "metrics before you automate, never after."
       - strong: "Automate safely"
         text: "cron, monitoring, alerts: it runs at night, without you."
+  agentisation:
+    kicker: "The concrete piece"
+    title: "AI agents in your pipeline"
+    lead: "A <strong>pi.dev agent</strong> (the open-source agent tooling I use daily) deployed in your environment, wired to your data, running on its own at night."
+    pointsTitle: "What I set up at your place"
+    points:
+      - "The pi.dev harness deployed on your machines — Windows and Linux alike."
+      - "The LLM of your choice: a hosted model via api.girard-davila.net, or your own deepinfra key."
+      - "Safe automation: cron, monitoring, alerts, metrics before anything ships."
+    proofSummary: "Deployment proof — 2 Windows machines + deepseek-v4.1-flash (already done at a client)"
+    proofHeading: "The step-by-step deployment"
+    proofIntro: "With its own deepinfra key, an agent reaches DeepSeek v4.1 flash in a few commands:"
+    proofSteps:
+      - "curl -fsSL https://pi.dev/install.sh | sh"
+      - "pi install npm:pi-deepinfra"
+      - "pi  →  /login deepinfra  →  https://deepinfra.com/dash/api_keys"
+      - "/model deepinfra 4.1   (select DeepSeek 4.1 flash)"
+      - "type “test”: with ~€10 of deepinfra credit the agent replies “test”; otherwise top up credit"
+    accessTitle: "For your agents, on the model side"
+    accessText: "Two options: your own deepinfra key (bring-your-own), or an api.girard-davila.net account — key generated in a few clicks, credits included in beta. One-command connect via pi-provider-gd."
+    cta: "Book the scoping call"
   modules:
     title: "Modules"
     intro: "Five training modules, each standalone or combinable into a path. Every module starts from a live demo, not a slideshow."
