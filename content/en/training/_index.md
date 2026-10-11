@@ -31,13 +31,19 @@ params:
       - "Safe automation: cron, monitoring, alerts, metrics before anything ships."
     proofSummary: "Deployment proof: Windows computer + deepseek-v4.1-flash (already deployed at a client)"
     proofHeading: "The step-by-step deployment"
-    proofIntro: "With its own deepinfra key, an agent reaches DeepSeek v4.1 flash in a few commands:"
+    proofIntro: "Create your account at [api.girard-davila.net](https://api.girard-davila.net/api/llm/sso/key/generate) to get your API key (GitHub sign-in), then connect pi in a few commands:"
     proofSteps:
       - "curl -fsSL https://pi.dev/install.sh | sh"
-      - "pi install npm:pi-deepinfra"
-      - "pi  →  /login deepinfra  →  https://deepinfra.com/dash/api_keys"
-      - "/model deepinfra 4.1   (select DeepSeek 4.1 flash)"
-      - "type “test”: with ~€10 of deepinfra credit the agent replies “test”; otherwise top up credit"
+      - "pi install git:github.com/alx/pi-provider-gd"
+      - "pi  →  /login gd   (GitHub sign-in at api.girard-davila.net — key stored automatically)"
+      - "/model gd   → pick a model, e.g. gd/Qwen3.8-27B-i1-IQ4_XS-GGUF-Smaller or gd/deepseek-v4.1-flash"
+      - "say “test” — the agent replies"
+    proofMermaid: |-
+      flowchart TD
+        A["curl -fsSL https://pi.dev/install.sh | sh"] --> B["pi install git:github.com/alx/pi-provider-gd"]
+        B --> C["/login gd — GitHub sign-in (api.girard-davila.net)"]
+        C --> D["/model gd — pick a model"]
+        D --> E["say “test” — the agent replies"]
     accessTitle: "For your agents, on the model side"
     accessText: "Two options: your own deepinfra key (bring-your-own), or an api.girard-davila.net account — key generated in a few clicks, credits included in beta. One-command connect via pi-provider-gd."
     cta: "Book the scoping call"
