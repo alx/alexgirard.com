@@ -1363,7 +1363,7 @@ a.hover\:text-blue-800:hover { color: #1e40af; }
    AGENTISATION — pi.dev in your pipeline (hero <-> modules)
    ============================================================ */
 .agent {
-  background: var(--accent-tint);
+  background: transparent;
   padding: 110px 24px;
   border-top: 1px solid var(--accent-tint-bd);
 }
